@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using MauiFinanceApp.Pages;
+using Microsoft.Extensions.Logging;
 
 namespace MauiFinanceApp;
 
@@ -14,6 +15,9 @@ public static class MauiProgram
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
 			});
+
+        builder.Services.AddSingleton<Login>();
+        builder.Services.AddTransient<Home>();
 
 #if DEBUG
 		builder.Logging.AddDebug();

@@ -3,10 +3,44 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiFinanceApp.Pages.Login"
              Title="Login">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions="*,4*,auto">
+
+        <VerticalStackLayout Grid.Row="0" Spacing="10" HorizontalOptions="Center">
+            <Image Source="pocket.jpg" 
+                   WidthRequest="200" 
+                   Margin="10" 
+                   VerticalOptions="Center"></Image>
+            <Label Text="Budget" 
+                   FontSize="24" 
+                   FontFamily="OpenSansSemibold" 
+                   TextColor="#512BD4"
+                   HorizontalOptions="Center"></Label>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Grid.Row="1" Margin="0,0,0,20" 
+                             VerticalOptions="Center" Spacing="20">
+            <Entry Keyboard="Text"
+               ClearButtonVisibility="WhileEditing" 
+               Margin="20,0,20,0"
+               Placeholder="Username"/>
+
+            <Entry Keyboard="Number"
+               ClearButtonVisibility="WhileEditing" 
+               Margin="20,0,20,0"
+               Placeholder="Password"
+               IsPassword="True"/>
+
+
+            <Button BackgroundColor="#512BD4"
+                    TextColor="White" 
+                    FontFamily="OpenSansSemibold"
+                    FontSize="22"
+                    Text="Start"
+                    VerticalOptions="Start"
+                    Margin="20,30,20,0"
+                    HeightRequest="60"></Button>
+        </VerticalStackLayout>
+    </Grid>
+
 </ContentPage>

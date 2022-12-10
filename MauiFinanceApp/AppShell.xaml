@@ -3,12 +3,12 @@
     x:Class="MauiFinanceApp.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiFinanceApp"
+    xmlns:pages="clr-namespace:MauiFinanceApp.Pages"
     Shell.FlyoutBehavior="Disabled">
 
     <ShellContent
         Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
+        ContentTemplate="{DataTemplate pages:Home}"
         Route="MainPage" />
 
 </Shell>
