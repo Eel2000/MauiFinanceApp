@@ -2,11 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiFinanceApp.Pages.Login"
-             Title="Login">
+             Title="Login"
+             BackgroundColor="WhiteSmoke">
 
-    <Grid RowDefinitions="*,4*,auto">
+    <Grid RowDefinitions="*,*,4*,auto">
 
-        <VerticalStackLayout Grid.Row="0" Spacing="10" HorizontalOptions="Center">
+        <StackLayout Grid.Row="1" Spacing="10" HorizontalOptions="Center">
             <Image Source="pocket.jpg" 
                    WidthRequest="200" 
                    Margin="10" 
@@ -16,9 +17,9 @@
                    FontFamily="OpenSansSemibold" 
                    TextColor="#512BD4"
                    HorizontalOptions="Center"></Label>
-        </VerticalStackLayout>
+        </StackLayout>
 
-        <VerticalStackLayout Grid.Row="1" Margin="0,0,0,20" 
+        <VerticalStackLayout Grid.Row="2" Margin="0,0,0,20" 
                              VerticalOptions="Center" Spacing="20">
             <Entry Keyboard="Text"
                ClearButtonVisibility="WhileEditing" 
