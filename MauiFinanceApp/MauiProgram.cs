@@ -1,4 +1,5 @@
-﻿using MauiFinanceApp.Pages;
+﻿using MauiFinanceApp.DataAccess;
+using MauiFinanceApp.Pages;
 using MauiFinanceApp.ViewModels;
 using Microsoft.Extensions.Logging;
 
@@ -29,6 +30,12 @@ public static class MauiProgram
 
         builder.Services.AddTransient<LoginViewModel>();
         builder.Services.AddTransient<MainPageViewModel>();
+
+        #endregion
+
+        #region Service&DatabaseAccesRegitration
+
+        builder.Services.AddSingleton<WalletDatabase>();
 
         #endregion
 
