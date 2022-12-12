@@ -16,8 +16,15 @@ public partial class App : Application
 
         #endregion
 
-
-        MainPage = new NavigationPage(new MainPage());
+        var logIn = Preferences.Get("LoggedIn", false);
+        if (logIn is false)
+        {
+            MainPage = new MainPage();
+        }
+        else
+        {
+            MainPage = new AppShell();
+        }
     }
 
     /// <summary>

@@ -78,6 +78,8 @@
 
 	<ItemGroup>
 	  <Folder Include="Models\" />
+	  <Folder Include="DataAccess\" />
+	  <Folder Include="ViewModels\" />
 	  <Folder Include="Pages\Dialogs\" />
 	  <Folder Include="Services\" />
 	</ItemGroup>
