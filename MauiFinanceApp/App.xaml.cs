@@ -1,11 +1,13 @@
 ﻿using MauiFinanceApp.Controls;
+using MauiFinanceApp.DataAccess;
+using MauiFinanceApp.ViewModels;
 using Microsoft.Maui.Platform;
 
 namespace MauiFinanceApp;
 
 public partial class App : Application
 {
-    public App()
+    public App(MainPageViewModel vm)
     {
         InitializeComponent();
 
@@ -19,7 +21,7 @@ public partial class App : Application
         var logIn = Preferences.Get("LoggedIn", false);
         if (logIn is false)
         {
-            MainPage = new MainPage();
+            MainPage = new MainPage(vm);
         }
         else
         {

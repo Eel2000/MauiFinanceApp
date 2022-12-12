@@ -2,11 +2,18 @@
 using MauiFinanceApp.Pages;
 using MauiFinanceApp.Utils;
 using CommunityToolkit.Mvvm.Input;
+using MauiFinanceApp.DataAccess;
 
 namespace MauiFinanceApp.ViewModels;
 
 public partial class MainPageViewModel : BaseViewModel
 {
+    private readonly WalletDatabase _database;
+
+    public MainPageViewModel(WalletDatabase database)
+    {
+        _database = database;
+    }
 
 
     [RelayCommand]
@@ -19,11 +26,15 @@ public partial class MainPageViewModel : BaseViewModel
     }
 
     [RelayCommand]
-    void DisconnectedMode()
+    async void DisconnectedMode()
     {
         Preferences.Set(Constants.LOGIN_MODE, LoginMode.DISCONNECTED.ToString());
-        App.Current.MainPage.Navigation.PushModalAsync(new Login());
-        //TODO:implement the login through the local db(sqlite).
+        var dailog = await App.Current.MainPage.DisplayAlert("Wallet",
+             "You will start using the app in a disconnected way without data sync to the cloud." +
+             "do you still want to start?", "Start anyway", "Cancel");
+
+        if (dailog)
+            App.Current.MainPage.Navigation.PushModalAsync(new Login(_database));
     }
 }
 
