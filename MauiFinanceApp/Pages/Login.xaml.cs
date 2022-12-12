@@ -6,4 +6,10 @@ public partial class Login : ContentPage
 	{
 		InitializeComponent();
 	}
+
+    private void BtnLogin_OnClicked(object sender, EventArgs e)
+    {
+        Navigation.PopModalAsync(true);
+        App.Current.MainPage.Navigation.PushAsync(new AppShell());
+    }
 }

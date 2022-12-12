@@ -4,11 +4,35 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:pages="clr-namespace:MauiFinanceApp.Pages"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Disabled"
+    Shell.NavBarIsVisible="False">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate pages:Home}"
-        Route="MainPage" />
+    <TabBar >
+        <Tab Icon="home.png">
+            <ShellContent
+                Title="Dashboard"
+                ContentTemplate="{DataTemplate pages:Home}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Icon="wallet.png">
+            <ShellContent
+                Title="Pockets"
+                ContentTemplate="{DataTemplate pages:Wallet}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Icon="trend.png">
+            <ShellContent
+                Title="Statistics"
+                ContentTemplate="{DataTemplate pages:Details}"
+                Route="MainPage" />
+        </Tab>
+        <Tab Icon="user.png">
+            <ShellContent
+                Title="Account"
+                ContentTemplate="{DataTemplate pages:Account}"
+                Route="MainPage" />
+        </Tab>
+    </TabBar>
+
 
 </Shell>

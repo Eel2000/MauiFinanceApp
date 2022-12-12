@@ -56,7 +56,11 @@
 	<ItemGroup>
 	  <None Remove="Resources\Images\appsplash.jpg" />
 	  <None Remove="Resources\Images\coins.jpg" />
+	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\pocket.jpg" />
+	  <None Remove="Resources\Images\trend.png" />
+	  <None Remove="Resources\Images\user.png" />
+	  <None Remove="Resources\Images\wallet.png" />
 	  <None Remove="Resources\Splash\appsplash.jpg" />
 	</ItemGroup>
 
@@ -79,10 +83,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="Pages\Account.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Details.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\Home.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Login.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\Wallet.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

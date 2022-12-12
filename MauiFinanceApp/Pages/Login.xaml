@@ -38,14 +38,16 @@
                 </Frame>
 
 
-                <Button BackgroundColor="#512BD4"
+                <Button x:Name="btnLogin"
+                    BackgroundColor="#512BD4"
                     TextColor="White" 
                     FontFamily="OpenSansSemibold"
                     FontSize="22"
                     Text="Start"
                     VerticalOptions="Start"
                     Margin="20,30,20,0"
-                    HeightRequest="60"></Button>
+                    HeightRequest="60"
+                    Clicked="BtnLogin_OnClicked"/>
             </VerticalStackLayout>
         </Grid>
     </ScrollView>
