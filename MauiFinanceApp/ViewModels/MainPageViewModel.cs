@@ -1,8 +1,7 @@
-﻿using System.Reflection.Metadata;
-using CommunityToolkit.Mvvm.Input;
-using MauiFinanceApp.Enums;
+﻿using MauiFinanceApp.Enums;
 using MauiFinanceApp.Pages;
 using MauiFinanceApp.Utils;
+using CommunityToolkit.Mvvm.Input;
 
 namespace MauiFinanceApp.ViewModels;
 
