@@ -27,20 +27,43 @@
                    LineBreakMode="WordWrap"
                    HorizontalTextAlignment="Center"
                    Margin="20,0,20,0"/>
+
+            <Label Text="Select your mode : connected for data sync and later your wherever in the world and disconnected for local use"
+                   FontFamily="OpenSansRegular" 
+                   FontSize="15"
+                   HorizontalOptions="Center"
+                   LineBreakMode="WordWrap"
+                   HorizontalTextAlignment="Center"
+                   Margin="20,0,20,0"/>
         </StackLayout>
-        <StackLayout Grid.Row="2" Padding="0,0,0,25">
-            <Button x:Name="btnStarted"
+        <HorizontalStackLayout Grid.Row="2" Padding="20,0,20,25">
+            <Button x:Name="BtnStartedConnected"
                     TextColor="White"
                     BackgroundColor="#512BD4"
                     CornerRadius="10"
-                    Text="Get Started"
+                    Text="Connected mode"
                     WidthRequest="150"
                     FontFamily="OpenSansSemibold"
                     FontSize="17"
                     HeightRequest="60"
                     Margin="20,0,20,0"
+                    IsEnabled="False"
                     Command="{Binding GetStartedCommand}"/>
-        </StackLayout>
+
+            <Button x:Name="BtnStartedDisconnected"
+                    TextColor="#512BD4"
+                    BackgroundColor="WhiteSmoke"
+                    BorderColor="#512BD4"
+                    BorderWidth="1"
+                    CornerRadius="10"
+                    Text="Disconnected mode"
+                    WidthRequest="150"
+                    FontFamily="OpenSansSemibold"
+                    FontSize="17"
+                    HeightRequest="60"
+                    Margin="0,0,20,0"
+                    Command="{Binding DisconnectedModeCommand}"/>
+        </HorizontalStackLayout>
     </Grid>
 
 </ContentPage>
