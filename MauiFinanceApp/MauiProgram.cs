@@ -1,4 +1,5 @@
 ﻿using MauiFinanceApp.Pages;
+using MauiFinanceApp.ViewModels;
 using Microsoft.Extensions.Logging;
 
 namespace MauiFinanceApp;
@@ -15,12 +16,21 @@ public static class MauiProgram
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
             });
+        #region PageRegistration
 
         builder.Services.AddTransient<Home>();
         builder.Services.AddTransient<Login>();
         builder.Services.AddSingleton<Details>();
         builder.Services.AddSingleton<Wallet>();
         builder.Services.AddSingleton<Account>();
+        #endregion
+
+        #region ViewModelRegistration
+
+        builder.Services.AddTransient<LoginViewModel>();
+        builder.Services.AddTransient<MainPageViewModel>();
+
+        #endregion
 
 #if DEBUG
         builder.Logging.AddDebug();

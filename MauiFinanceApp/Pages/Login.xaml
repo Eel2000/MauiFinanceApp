@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiFinanceApp.Pages.Login"
+             x:DataType="vm:LoginViewModel"
+             xmlns:vm="clr-namespace:MauiFinanceApp.ViewModels"
              xmlns:controls="clr-namespace:MauiFinanceApp.Controls"
              Title="Login"
              BackgroundColor="WhiteSmoke">
@@ -27,14 +29,16 @@
                     <controls:CustomEntry Placeholder="Username" Keyboard="Email"
                                       PlaceholderColor="#512BD4"
                                       FontFamily="OpenSansSemibold"
-                                      FontSize="20"/>
+                                      FontSize="20"
+                                      Text="{Binding Username}"/>
                 </Frame>
 
                 <Frame CornerRadius="10" BorderColor="#512BD4" Margin="20,0,20,0">
                     <controls:CustomEntry Placeholder="Password" IsPassword="True"
                                       PlaceholderColor="#512BD4"
                                       FontFamily="OpenSansSemibold"
-                                      FontSize="20"/>
+                                      FontSize="20"
+                                      Text="{Binding Password}"/>
                 </Frame>
 
 
@@ -47,7 +51,7 @@
                     VerticalOptions="Start"
                     Margin="20,30,20,0"
                     HeightRequest="60"
-                    Clicked="BtnLogin_OnClicked"/>
+                    Command="{Binding LoginCommandCommand}"/>
             </VerticalStackLayout>
         </Grid>
     </ScrollView>
