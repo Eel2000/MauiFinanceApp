@@ -60,9 +60,11 @@
 	  <None Remove="Resources\Images\money.png" />
 	  <None Remove="Resources\Images\piggy_bank.png" />
 	  <None Remove="Resources\Images\pocket.jpg" />
+	  <None Remove="Resources\Images\sim_card.png" />
 	  <None Remove="Resources\Images\trend.png" />
 	  <None Remove="Resources\Images\user.png" />
 	  <None Remove="Resources\Images\wallet.png" />
+	  <None Remove="Resources\Images\wifi_signal.png" />
 	  <None Remove="Resources\Splash\appsplash.jpg" />
 	</ItemGroup>
 

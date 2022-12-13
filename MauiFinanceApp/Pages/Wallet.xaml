@@ -2,11 +2,83 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiFinanceApp.Pages.Wallet"
-             Title="Wallet">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Wallet"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             Title="Wallet" BackgroundColor="#0d0d0d">
+
+    <Grid RowDefinitions="0.29*,*">
+        <!--#region Title -->
+        <Grid>
+            <Label Text="Wallet" 
+                   FontSize="30" 
+                   FontFamily="OpenSansSemibold"
+                   TextColor="#ceaa44"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+        </Grid>
+        <!--#endregion-->
+
+        <Grid Grid.Row="1" RowDefinitions="*,*">
+            <Grid RowDefinitions="0.3,*">
+                <!--#region cards section title -->
+                <Grid ColumnDefinitions="auto,*,*" HeightRequest="40" Margin="20,0,0,0">
+                    <Label Text="Virtual Cards"
+                           FontSize="18"
+                           FontFamily="OpenSansSemibold"
+                           TextColor="White"/>
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region Cards -->
+                <!--TODO replace the section below with an horizontal collection view of cards-->
+                <Grid Grid.Row="1">
+                    <Border HeightRequest="220" WidthRequest="330" StrokeShape="RoundRectangle 20">
+                        <Grid ColumnDefinitions="*,0.6*">
+
+                            <!--#region Card body -->
+                            <Grid BackgroundColor="#28156a" RowDefinitions="auto,*,auto,0.2*">
+                                <Image Source="wifi_signal.png" WidthRequest="30"
+                                    HorizontalOptions="Start" Margin="20,15,0,0"/>
+
+                                <VerticalStackLayout Grid.Row="2" Margin="20,0,0,20" Spacing="5">
+                                    <Label Text="Carol Denver"
+                                           FontSize="15"
+                                           FontFamily="OpenSansSemibold"
+                                           TextColor="White"/>
+
+                                    <Label Text="XXXXXXXXXX7890"
+                                           FontSize="13"
+                                           FontFamily="OpenSansSemibold"
+                                           TextColor="White"/>
+
+                                    <Label Text="5/11"
+                                           FontSize="15"
+                                           FontFamily="OpenSansSemibold"
+                                           TextColor="White"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                            <!--#endregion-->
+
+                            <!--#region card header -->
+                            <Grid Grid.Column="1" RowDefinitions="auto,*,auto">
+                                <Border StrokeShape="RoundRectangle 10" BackgroundColor="#ceaa44" 
+                                        HeightRequest="50" WidthRequest="65" Margin="0,15,15,0" HorizontalOptions="End">
+                                    <Image Source="sim_card.png" HeightRequest="50" WidthRequest="65"/>
+                                </Border>
+
+                                <Label Grid.Row="2"
+                                    Text="VCard"
+                                       FontSize="17"
+                                       FontFamily="OpenSansSemibold"
+                                       TextColor="#222222"
+                                    HorizontalOptions="End"
+                                    Margin="0,0,15,15"/>
+                            </Grid>
+                            <!--#endregion-->
+                        </Grid>
+                    </Border>
+                </Grid>
+                <!--#endregion-->
+            </Grid>
+        </Grid>
+
+    </Grid>
 </ContentPage>
