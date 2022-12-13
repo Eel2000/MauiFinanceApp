@@ -69,5 +69,6 @@ public partial class AccountViewModel : BaseViewModel
 
     //TODO: Need to add here the ability to sync data, by switching from disconnected
     //TODO: to connected mode and then sync the current account with the cloud api.
+    //TODO: replace all alert by communityToolkit toast
 }
 
