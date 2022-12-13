@@ -97,6 +97,7 @@
                                 </VerticalStackLayout>
                                 <!--#endregion-->
 
+                                <!--#region details section -->
                                 <Grid Grid.Row="1" RowDefinitions="*,0.1*,*" RowSpacing="10">
                                     <!--#region expenses -->
                                     <StackLayout Grid.Row="0">
@@ -163,6 +164,7 @@
                                     </StackLayout>
                                     <!--#endregion-->
                                 </Grid>
+                                <!--#endregion-->
                             </Grid>
                         </Frame>
                     </Grid>
