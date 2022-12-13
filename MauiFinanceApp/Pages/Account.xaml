@@ -1,12 +1,47 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:controls="clr-namespace:MauiFinanceApp.Controls"
+             xmlns:vm="clr-namespace:MauiFinanceApp.ViewModels"
+             x:DataType="vm:AccountViewModel"
              x:Class="MauiFinanceApp.Pages.Account"
              Title="Account">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to Profile"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions="auto,*,auto">
+        <HorizontalStackLayout Grid.Row="0" HeightRequest="100">
+            <Label Text="Wallet"
+                   FontSize="20"
+                   FontFamily="OpenSansSemibold"
+                   TextColor="#512BD4"
+                   HorizontalTextAlignment="Start"
+                   VerticalTextAlignment="Center"
+                   Margin="20,0,0,0"/>
+        </HorizontalStackLayout>
+
+        <VerticalStackLayout Spacing="10" Grid.Row="1">
+            <Frame HeightRequest="150" WidthRequest="150"
+               VerticalOptions="Start" BorderColor="#512BD4"
+               HorizontalOptions="CenterAndExpand" CornerRadius="100">
+                <Image Source="user.png" Aspect="AspectFill"
+                    HeightRequest="60" WidthRequest="60"/>
+            </Frame>
+            <controls:CustomEntry IsReadOnly="True"
+                                      Text="{Binding ConnectedUser.Username}"
+                                      FontSize="25"
+                                      FontFamily="OpenSansSemibold"
+                                      TextColor="#512BD4"
+                                      HorizontalOptions="CenterAndExpand"/>
+        </VerticalStackLayout>
+
+        <VerticalStackLayout Padding="20" Grid.Row="2">
+            <Button BackgroundColor="#3d0000"
+                    TextColor="White"
+                    FontSize="20"
+                    FontFamily="OpenSansSemibold"
+                    Margin="20,0,20,0"
+                    HeightRequest="60"
+                    Text="Disconnect"
+                    Command="{Binding DisconnectCommand}"/>
+        </VerticalStackLayout>
+    </Grid>
 </ContentPage>

@@ -39,7 +39,7 @@ namespace MauiFinanceApp.DataAccess
             var user = await Database.Table<User>().FirstOrDefaultAsync();
             if (user is not null)
             {
-                var result = await Database.DeleteAsync<User>(user);
+                var result = await Database.DeleteAsync(user);
                 return result > 0;
             }
 
