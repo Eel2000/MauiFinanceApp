@@ -57,6 +57,8 @@
 	  <None Remove="Resources\Images\appsplash.jpg" />
 	  <None Remove="Resources\Images\coins.jpg" />
 	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\money.png" />
+	  <None Remove="Resources\Images\piggy-bank.png" />
 	  <None Remove="Resources\Images\pocket.jpg" />
 	  <None Remove="Resources\Images\trend.png" />
 	  <None Remove="Resources\Images\user.png" />

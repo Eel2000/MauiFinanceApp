@@ -29,6 +29,7 @@ public static class MauiProgram
         #region ViewModelRegistration
 
         builder.Services.AddTransient<LoginViewModel>();
+        builder.Services.AddTransient<AccountViewModel>();
         builder.Services.AddTransient<MainPageViewModel>();
 
         #endregion
