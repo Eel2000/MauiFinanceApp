@@ -17,6 +17,7 @@
         <!--#endregion-->
 
         <Grid Grid.Row="1" RowDefinitions="*,*">
+            <!--#region Card section -->
             <Grid RowDefinitions="0.3,*">
                 <!--#region cards section title -->
                 <Grid ColumnDefinitions="auto,*,*" HeightRequest="40" Margin="20,0,0,0">
@@ -77,6 +78,20 @@
                     </Border>
                 </Grid>
                 <!--#endregion-->
+            </Grid>
+            <!--#endregion-->
+
+            <Grid Grid.Row="1">
+                <Grid RowDefinitions="0.3*,*">
+                    <!--#region Operation section title -->
+                    <Grid ColumnDefinitions="auto,*,*" HeightRequest="40" Margin="20,0,0,0">
+                        <Label Text="Operations"
+                               FontSize="18"
+                               FontFamily="OpenSansSemibold"
+                               TextColor="White"/>
+                    </Grid>
+                    <!--#endregion-->
+                </Grid>
             </Grid>
         </Grid>
 
