@@ -1,4 +1,5 @@
-﻿using MauiFinanceApp.DataAccess;
+﻿using CommunityToolkit.Maui;
+using MauiFinanceApp.DataAccess;
 using MauiFinanceApp.Pages;
 using MauiFinanceApp.ViewModels;
 using Microsoft.Extensions.Logging;
@@ -16,7 +17,9 @@ public static class MauiProgram
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                 fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-            });
+            })
+            .UseMauiCommunityToolkit();
+
         #region PageRegistration
 
         builder.Services.AddTransient<Home>();

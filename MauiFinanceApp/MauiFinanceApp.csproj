@@ -58,7 +58,7 @@
 	  <None Remove="Resources\Images\coins.jpg" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\money.png" />
-	  <None Remove="Resources\Images\piggy-bank.png" />
+	  <None Remove="Resources\Images\piggy_bank.png" />
 	  <None Remove="Resources\Images\pocket.jpg" />
 	  <None Remove="Resources\Images\trend.png" />
 	  <None Remove="Resources\Images\user.png" />
@@ -73,6 +73,7 @@
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="3.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="MauiFinanceApp.Pages.Home"
              Title="Home" BackgroundColor="#0d0d0d">
     <Grid RowDefinitions="0.29*,*">
@@ -34,7 +35,8 @@
 
                 <!--#region MainContaint section -->
                 <Grid Grid.Row="1" ColumnDefinitions="*,*" Padding="20,0,20,20" ColumnSpacing="15">
-                    <Frame CornerRadius="15" BackgroundColor="#ceaa44" BorderColor="#ceaa44">
+                    <Frame CornerRadius="15" BackgroundColor="#ceaa44" BorderColor="#ceaa44"
+                           IsClippedToBounds="True" Effects="Ripple">
                         <Grid RowDefinitions="0.2*,*">
                             <VerticalStackLayout Spacing="2">
                                 <Label Text="Spent this month"
@@ -105,7 +107,7 @@
                                             <Grid ColumnDefinitions="0.8*,auto,*,0.4*" ColumnSpacing="10">
                                                 <Frame HeightRequest="60" WidthRequest="60" CornerRadius="60" 
                                                    BackgroundColor="#2b6747" BorderColor="#2b6747">
-
+                                                    <Image Source="piggy_bank.png" HeightRequest="30" WidthRequest="30"/>
                                                 </Frame>
                                                 <VerticalStackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
                                                     <Label Text="Savings" 
@@ -140,7 +142,7 @@
                                             <Grid ColumnDefinitions="0.8*,auto,*,0.4*" ColumnSpacing="10">
                                                 <Frame HeightRequest="60" WidthRequest="60" CornerRadius="60" 
                                                    BackgroundColor="#ceaa44" BorderColor="#ceaa44">
-
+                                                    <Image Source="money.png" HeightRequest="30" WidthRequest="30"/>
                                                 </Frame>
                                                 <VerticalStackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
                                                     <Label Text="Savings" 
