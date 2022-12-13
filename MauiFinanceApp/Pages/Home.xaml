@@ -23,11 +23,19 @@
             <!--#region MainPage top section -->
             <Grid RowDefinitions="0.3*,*">
                 <!--#region Title Section -->
-                <Grid>
+                <Grid ColumnDefinitions="auto,*,auto">
                     <Label Text="Analytics"
                            TextColor="White"
                            FontSize="20"
                            Margin="20,0,0,0"
+                           FontFamily="OpenSansSemibold"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Column="2" Text="See all"
+                           TextColor="#ceaa44"
+                           FontSize="15"
+                           Margin="0,0,20,0"
+                           TextDecorations="Underline"
                            FontFamily="OpenSansSemibold"
                            VerticalOptions="Center"/>
                 </Grid>
@@ -36,7 +44,7 @@
                 <!--#region MainContaint section -->
                 <Grid Grid.Row="1" ColumnDefinitions="*,*" Padding="20,0,20,20" ColumnSpacing="15">
                     <Frame CornerRadius="15" BackgroundColor="#ceaa44" BorderColor="#ceaa44"
-                           IsClippedToBounds="True" Effects="Ripple">
+                           IsClippedToBounds="True">
                         <Grid RowDefinitions="0.2*,*">
                             <VerticalStackLayout Spacing="2">
                                 <Label Text="Spent this month"
@@ -70,11 +78,19 @@
             <!--#region MainPage bottom section -->
             <Grid Grid.Row="1" RowDefinitions="0.15*,*">
                 <!--#region Title section -->
-                <Grid>
+                <Grid ColumnDefinitions="auto,*,auto">
                     <Label Text="Net worth"
                            TextColor="White"
                            FontSize="20"
                            Margin="20,0,0,0"
+                           FontFamily="OpenSansSemibold"
+                           VerticalOptions="Center"/>
+
+                    <Label Grid.Column="2" Text="See all"
+                           TextColor="#ceaa44"
+                           FontSize="15"
+                           Margin="0,0,20,0"
+                           TextDecorations="Underline"
                            FontFamily="OpenSansSemibold"
                            VerticalOptions="Center"/>
                 </Grid>
