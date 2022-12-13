@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             xmlns:vm="clr-namespace:MauiFinanceApp.ViewModels"
+             x:DataType="vm:HomeViewModel"
              x:Class="MauiFinanceApp.Pages.Home"
              Title="Home" BackgroundColor="#0d0d0d">
     <Grid RowDefinitions="0.29*,*">
@@ -37,7 +39,11 @@
                            Margin="0,0,20,0"
                            TextDecorations="Underline"
                            FontFamily="OpenSansSemibold"
-                           VerticalOptions="Center"/>
+                           VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToStatisticCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
                 <!--#endregion-->
 
@@ -59,7 +65,7 @@
                     <Frame Grid.Column="1" CornerRadius="15" BackgroundColor="#28156a" BorderColor="#28156a" Opacity="0.8">
                         <Grid RowDefinitions="0.2*,*">
                             <VerticalStackLayout Spacing="2">
-                                <Label Text="Spent this month"
+                                <Label Text="Left of budget"
                                        FontSize="15"
                                        FontFamily="OpenSansRegular"
                                        TextColor="WhiteSmoke"/>
@@ -92,7 +98,11 @@
                            Margin="0,0,20,0"
                            TextDecorations="Underline"
                            FontFamily="OpenSansSemibold"
-                           VerticalOptions="Center"/>
+                           VerticalOptions="Center">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding NavigateToStatisticCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </Grid>
                 <!--#endregion-->
 

@@ -20,13 +20,13 @@
                 ContentTemplate="{DataTemplate pages:Wallet}"
                 Route="MainPage" />
         </Tab>
-        <Tab Icon="trend.png">
+        <Tab Icon="trend.png" Route="Analytics">
             <ShellContent
                 Title="Statistics"
                 ContentTemplate="{DataTemplate pages:Details}"
                 Route="MainPage" />
         </Tab>
-        <Tab Icon="user.png">
+        <Tab Icon="user.png" Route="Account">
             <ShellContent
                 Title="Account"
                 ContentTemplate="{DataTemplate pages:Account}"
