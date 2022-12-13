@@ -34,8 +34,10 @@
         </VerticalStackLayout>
 
         <VerticalStackLayout Padding="20" Grid.Row="2">
-            <Button BackgroundColor="#3d0000"
-                    TextColor="White"
+            <Button BackgroundColor="White"
+                    TextColor="#512BD4"
+                    BorderColor="#512BD4"
+                    BorderWidth="1"
                     FontSize="20"
                     FontFamily="OpenSansSemibold"
                     Margin="20,0,20,0"
