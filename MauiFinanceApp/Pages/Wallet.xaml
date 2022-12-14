@@ -2,7 +2,6 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MauiFinanceApp.ViewModels"
-             x:DataType="vm:WalletViewModel"
              x:Class="MauiFinanceApp.Pages.Wallet"
              Title="Wallet" BackgroundColor="#0d0d0d">
 
@@ -61,17 +60,17 @@
                                                        HorizontalOptions="Start" Margin="20,15,0,0"/>
 
                                                 <VerticalStackLayout Grid.Row="2" Margin="20,0,0,20" Spacing="5">
-                                                    <Label Text="Carol Denver"
+                                                    <Label Text="{Binding Name}"
                                                            FontSize="15"
                                                            FontFamily="OpenSansSemibold"
                                                            TextColor="White"/>
 
-                                                    <Label Text="XXXXXXXXXX7890"
+                                                    <Label Text="{Binding Number}"
                                                            FontSize="13"
                                                            FontFamily="OpenSansSemibold"
                                                            TextColor="White"/>
 
-                                                    <Label Text="5/11"
+                                                    <Label Text="{Binding ExpiryDate, StringFormat='{0:dd/y}'}"
                                                            FontSize="15"
                                                            FontFamily="OpenSansSemibold"
                                                            TextColor="White"/>
@@ -112,7 +111,7 @@
                 <Grid RowDefinitions="0.3*,*">
                     <!--#region Operation section title -->
                     <Grid ColumnDefinitions="auto,*,*" HeightRequest="40" Margin="20,0,0,0">
-                        <Label Text="Operations"
+                        <Label Text="Budgets"
                                FontSize="18"
                                FontFamily="OpenSansSemibold"
                                TextColor="White"/>
@@ -120,7 +119,7 @@
                     <!--#endregion-->
 
                     <Grid Row="1" Margin="10,-20,10,0">
-                        <CollectionView ItemsSource="{Binding Operations}" ItemsUpdatingScrollMode="KeepLastItemInView" 
+                        <CollectionView ItemsSource="{Binding Budgets}" ItemsUpdatingScrollMode="KeepLastItemInView" 
                                         ItemSizingStrategy="MeasureAllItems">
                             <CollectionView.ItemsLayout>
                                 <LinearItemsLayout ItemSpacing="5" SnapPointsAlignment="Start" Orientation="Vertical"/>
@@ -130,18 +129,20 @@
                                     <Border HeightRequest="80" 
                                             StrokeShape="RoundRectangle 15" BackgroundColor="#222222" 
                                             Stroke="#222222">
-                                        <Grid ColumnDefinitions="0.4*,*">
-                                            <Border Margin="10" StrokeShape="RoundRectangle 5" BackgroundColor="#ceaa44" Stroke="#ceaa44">
-                                                <Image Source="credit_card.png"/>
+                                        <Grid ColumnDefinitions="0.3*,*">
+                                            <Border Margin="10" StrokeShape="RoundRectangle 50" 
+                                                    BackgroundColor="#ceaa44" Stroke="#ceaa44"
+                                                    HeightRequest="60" WidthRequest="60">
+                                                <Image Source="money_bag.png" HeightRequest="40"/>
                                             </Border>
 
                                             <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="5">
-                                                <Label Text="Fouds McDonald"
+                                                <Label Text="{Binding Name}"
                                                        TextColor="White"
                                                        FontFamily="OpenSansSemibold"
                                                        FontSize="15"/>
 
-                                                <Label Text="$24 on Monday the 12th"
+                                                <Label Text="{Binding DedicatedAmount, StringFormat='dedicated amount ${0:F2}'}"
                                                        TextColor="Gray"
                                                        FontFamily="OpenSansSemibold"
                                                        FontSize="12"/>

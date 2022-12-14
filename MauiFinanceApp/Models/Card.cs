@@ -10,5 +10,7 @@ public class Card
     public bool IsActive { get; set; }
     public DateTimeOffset ExpiryDate { get; set; } = DateTimeOffset.Now.AddYears(5);
     public bool IsSelected { get; set; }=false;
+    public  string Number { get; set; }
+    public  string Name { get; set; }
 }
 

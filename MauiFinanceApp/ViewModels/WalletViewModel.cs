@@ -13,6 +13,7 @@ public partial class WalletViewModel : BaseViewModel
 
     [ObservableProperty] private ObservableCollection<Card> _cards = new();
     [ObservableProperty] private ObservableCollection<Operation> _operations = new();
+    [ObservableProperty] private ObservableCollection<Budget> _budgets = new();
 
     [ObservableProperty]
     private decimal _amount;
@@ -32,18 +33,21 @@ public partial class WalletViewModel : BaseViewModel
                 Id = 1,
                 Amount = 2000,
                 ExpiryDate = DateTimeOffset.Now.AddYears(5),
+                Name = "Carol Denver"
             },
             new()
             {
                 Id = 2,
                 Amount = 4000,
                 ExpiryDate = DateTimeOffset.Now.AddYears(5),
+                Name = "John Idea"
             },
             new()
             {
                 Id = 3,
                 Amount = 6000,
                 ExpiryDate = DateTimeOffset.Now.AddYears(5),
+                Name = "Ariette Bill"
             },
         };
 
@@ -90,6 +94,32 @@ public partial class WalletViewModel : BaseViewModel
                 CardId = 3,
                 IsDeleted = false,
                 Amount = 250
+            },
+        };
+
+        Budgets = new()
+        {
+            new()
+            {
+                Id = 1,
+                IsActive = true,
+                Start = DateTimeOffset.Now,
+                End = DateTimeOffset.Now.AddDays(12),
+                DedicatedAmount = 50M,
+                Description = "Budget for transport",
+                HasReachLimit = false,
+                Name = "Transport"
+            },
+            new()
+            {
+                Id = 2,
+                IsActive = true,
+                Start = DateTimeOffset.Now,
+                End = DateTimeOffset.Now.AddDays(5),
+                DedicatedAmount = 50M,
+                Description = "Budget for found",
+                HasReachLimit = false,
+                Name = "Founds"
             },
         };
     }

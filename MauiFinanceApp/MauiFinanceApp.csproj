@@ -61,6 +61,7 @@
 	  <None Remove="Resources\Images\credit_card.png" />
 	  <None Remove="Resources\Images\home.png" />
 	  <None Remove="Resources\Images\money.png" />
+	  <None Remove="Resources\Images\money_bag.png" />
 	  <None Remove="Resources\Images\piggy_bank.png" />
 	  <None Remove="Resources\Images\pocket.jpg" />
 	  <None Remove="Resources\Images\sim_card.png" />
