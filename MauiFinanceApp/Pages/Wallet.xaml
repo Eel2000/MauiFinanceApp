@@ -6,21 +6,31 @@
              x:Class="MauiFinanceApp.Pages.Wallet"
              Title="Wallet" BackgroundColor="#0d0d0d">
 
-    <Grid RowDefinitions="0.1*,*">
+    <Grid RowDefinitions="0.25*,*">
         <!--#region Title -->
-        <Grid>
+        <Grid RowDefinitions="0.4*,*">
             <Label Text="Wallet" 
                    FontSize="30" 
                    FontFamily="OpenSansSemibold"
                    TextColor="#ceaa44"
                    VerticalOptions="Center"
-                   HorizontalOptions="Center"/>
+                   Margin="10,5,0,0"/>
+
+            <HorizontalStackLayout Grid.Row="1" Spacing="5" HorizontalOptions="CenterAndExpand">
+                <Button Text="Add Budget" HeightRequest="60"
+                        FontFamily="OpenSansSemibold"
+                        BackgroundColor="#2b6747"/>
+
+                <Button Text="Add Card" HeightRequest="60"
+                        FontFamily="OpenSansSemibold"
+                        BackgroundColor="#ceaa44"/>
+            </HorizontalStackLayout>
         </Grid>
         <!--#endregion-->
 
         <Grid Grid.Row="1" RowDefinitions="*,*">
             <!--#region Card section -->
-            <Grid RowDefinitions="0.3*,*" RowSpacing="-20" Margin="0,-20,0,0">
+            <Grid RowDefinitions="0.3*,*" RowSpacing="-20">
                 <!--#region cards section title -->
                 <Grid HeightRequest="20" Margin="20,0,0,0">
                     <Label Text="Virtual Cards"
@@ -31,7 +41,7 @@
                 <!--#endregion-->
 
                 <!--#region List -->
-                <Grid Grid.Row="1">
+                <Grid Grid.Row="1" Margin="0,0,0,0">
                     <CollectionView ItemsSource="{Binding Cards}" ItemSizingStrategy="MeasureAllItems">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Horizontal" SnapPointsType="Mandatory" SnapPointsAlignment="Center"/>
@@ -96,7 +106,7 @@
             <!--#endregion-->
 
             <!--#region Operation Section -->
-            <Grid Grid.Row="1" Margin="0,-40,0,0">
+            <Grid Grid.Row="1" Margin="0,0,0,0">
                 <Grid RowDefinitions="0.3*,*">
                     <!--#region Operation section title -->
                     <Grid ColumnDefinitions="auto,*,*" HeightRequest="40" Margin="20,0,0,0">
@@ -104,10 +114,52 @@
                                FontSize="18"
                                FontFamily="OpenSansSemibold"
                                TextColor="White"/>
+
+                        <Label HeightRequest="50"
+                               Text="Add Budget" 
+                               Grid.Column="2" 
+                               Margin="0,20,10,0"
+                               TextColor="#ceaa44"
+                               HorizontalOptions="EndAndExpand"
+                               VerticalOptions="Center"
+                               TextDecorations="Underline"/>
                     </Grid>
                     <!--#endregion-->
 
-                    <Grid Row="1" BackgroundColor="AliceBlue" Margin="0,-20,0,0"></Grid>
+                    <Grid Row="1" Margin="10,-20,10,0">
+                        <CollectionView ItemsSource="{Binding Operations}" ItemsUpdatingScrollMode="KeepLastItemInView" 
+                                        ItemSizingStrategy="MeasureAllItems">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout ItemSpacing="5" SnapPointsAlignment="Start" Orientation="Vertical"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Border HeightRequest="80" 
+                                            StrokeShape="RoundRectangle 15" BackgroundColor="#222222" 
+                                            Stroke="#222222">
+                                        <Grid ColumnDefinitions="0.4*,*">
+                                            <Border Margin="10" StrokeShape="RoundRectangle 5" BackgroundColor="#ceaa44" Stroke="#ceaa44">
+
+                                            </Border>
+
+                                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="5">
+                                                <Label Text="Fouds McDonald"
+                                                       TextColor="White"
+                                                       FontFamily="OpenSansSemibold"
+                                                       FontSize="15"/>
+
+                                                <Label Text="$24 on Monday the 12th"
+                                                       TextColor="Gray"
+                                                       FontFamily="OpenSansSemibold"
+                                                       FontSize="12"/>
+                                            </VerticalStackLayout>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+
+                    </Grid>
                 </Grid>
             </Grid>
             <!--#endregion-->
