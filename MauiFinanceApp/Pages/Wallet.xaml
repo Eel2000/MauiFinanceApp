@@ -29,6 +29,8 @@
                                TextColor="White"/>
                 </Grid>
                 <!--#endregion-->
+
+                <!--#region List -->
                 <Grid Grid.Row="1">
                     <CollectionView ItemsSource="{Binding Cards}" ItemSizingStrategy="MeasureAllItems">
                         <CollectionView.ItemsLayout>
@@ -89,6 +91,7 @@
                         </CollectionView.ItemTemplate>
                     </CollectionView>
                 </Grid>
+                <!--#endregion-->
             </Grid>
             <!--#endregion-->
 
