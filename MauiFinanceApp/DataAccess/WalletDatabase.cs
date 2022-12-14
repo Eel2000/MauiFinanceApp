@@ -24,6 +24,8 @@ namespace MauiFinanceApp.DataAccess
             Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
 
             await Database.CreateTableAsync<User>();
+            await Database.CreateTableAsync<Card>();
+            await Database.CreateTableAsync<Operation>();
         }
 
         #region UserOps
@@ -46,6 +48,54 @@ namespace MauiFinanceApp.DataAccess
             return false;
         }
         #endregion
+
+        #region CardOps
+
+        public async ValueTask SaveCardAsync(Card card)
+            => await Database.InsertOrReplaceAsync(card);
+
+        public async ValueTask<IEnumerable<Card>> GetCardsAsync()
+            => await Database.Table<Card>().Where(x => x.IsActive).ToListAsync();
+
+        public async ValueTask RemoveCardAsync(int cardId)
+            => await Database.DeleteAsync(cardId);
+
+        #endregion
+
+        #region OperationOps
+        public async ValueTask SaveOperationAsync(Operation operation)
+           => await Database.InsertOrReplaceAsync(operation);
+
+        public async ValueTask<IEnumerable<Operation>> GetOperationListByCardAsync(int card)
+            => await Database.Table<Operation>().Where(x => x.IsDeleted == false && x.CardId == card)
+                .OrderByDescending(x => x.OperationDate)
+                .ToListAsync();
+
+        public async ValueTask<Operation> RemoveOperationAsync(int operationId)
+        {
+            var ops = await Database.Table<Operation>()
+                .FirstOrDefaultAsync(o => o.Id == operationId && o.IsDeleted == false);
+            if (ops is null)
+            {
+                return null;
+            }
+
+            var card = await Database.Table<Card>().FirstOrDefaultAsync(c => c.Id == ops.CardId && c.IsActive);
+            if (card is null)
+            {
+                return null;
+            }
+
+            card.Amount += ops.Amount;
+            ops.IsDeleted = true;
+
+            await Database.InsertOrReplaceAsync(card);
+            await Database.InsertOrReplaceAsync(ops);
+
+            return ops;
+        }
+        #endregion
+
     }
 
 }
