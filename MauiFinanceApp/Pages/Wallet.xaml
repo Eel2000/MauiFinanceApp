@@ -6,24 +6,26 @@
              x:Class="MauiFinanceApp.Pages.Wallet"
              Title="Wallet" BackgroundColor="#0d0d0d">
 
-    <Grid RowDefinitions="0.25*,*">
+    <Grid RowDefinitions="0.22*,*">
         <!--#region Title -->
         <Grid RowDefinitions="0.4*,*">
             <Label Text="Wallet" 
-                   FontSize="30" 
-                   FontFamily="OpenSansSemibold"
-                   TextColor="#ceaa44"
+                   FontSize="25" 
+                   FontFamily="UnboundBold"
+                   TextColor="White"
                    VerticalOptions="Center"
                    Margin="10,5,0,0"/>
 
             <HorizontalStackLayout Grid.Row="1" Spacing="5" HorizontalOptions="CenterAndExpand">
-                <Button Text="Add Budget" HeightRequest="60"
+                <Button Text="+ Budget" HeightRequest="50"
                         FontFamily="OpenSansSemibold"
-                        BackgroundColor="#2b6747"/>
+                        BackgroundColor="#2b6747"
+                        WidthRequest="90"/>
 
-                <Button Text="Add Card" HeightRequest="60"
+                <Button Text="+ Card" HeightRequest="50"
                         FontFamily="OpenSansSemibold"
-                        BackgroundColor="#ceaa44"/>
+                        BackgroundColor="#ceaa44"
+                        WidthRequest="90"/>
             </HorizontalStackLayout>
         </Grid>
         <!--#endregion-->
@@ -114,15 +116,6 @@
                                FontSize="18"
                                FontFamily="OpenSansSemibold"
                                TextColor="White"/>
-
-                        <Label HeightRequest="50"
-                               Text="Add Budget" 
-                               Grid.Column="2" 
-                               Margin="0,20,10,0"
-                               TextColor="#ceaa44"
-                               HorizontalOptions="EndAndExpand"
-                               VerticalOptions="Center"
-                               TextDecorations="Underline"/>
                     </Grid>
                     <!--#endregion-->
 
@@ -139,7 +132,7 @@
                                             Stroke="#222222">
                                         <Grid ColumnDefinitions="0.4*,*">
                                             <Border Margin="10" StrokeShape="RoundRectangle 5" BackgroundColor="#ceaa44" Stroke="#ceaa44">
-
+                                                <Image Source="credit_card.png"/>
                                             </Border>
 
                                             <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="5">
