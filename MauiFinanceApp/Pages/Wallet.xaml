@@ -36,7 +36,7 @@
                 <Grid HeightRequest="20" Margin="20,0,0,0">
                     <Label Text="Virtual Cards"
                                FontSize="18"
-                               FontFamily="OpenSansSemibold"
+                               FontFamily="UnboundBold"
                                TextColor="White"/>
                 </Grid>
                 <!--#endregion-->
@@ -62,17 +62,17 @@
                                                 <VerticalStackLayout Grid.Row="2" Margin="20,0,0,20" Spacing="5">
                                                     <Label Text="{Binding Name}"
                                                            FontSize="15"
-                                                           FontFamily="OpenSansSemibold"
+                                                           FontFamily="UnboundLight"
                                                            TextColor="White"/>
 
                                                     <Label Text="{Binding Number}"
                                                            FontSize="13"
-                                                           FontFamily="OpenSansSemibold"
+                                                           FontFamily="UnboundLight"
                                                            TextColor="White"/>
 
                                                     <Label Text="{Binding ExpiryDate, StringFormat='{0:dd/y}'}"
                                                            FontSize="15"
-                                                           FontFamily="OpenSansSemibold"
+                                                           FontFamily="UnboundLight"
                                                            TextColor="White"/>
                                                 </VerticalStackLayout>
                                             </Grid>
@@ -87,8 +87,8 @@
 
                                                 <Label Grid.Row="2"
                                                        Text="VCard"
-                                                       FontSize="17"
-                                                       FontFamily="OpenSansSemibold"
+                                                       FontSize="15"
+                                                       FontFamily="UnboundBold"
                                                        TextColor="#222222"
                                                        HorizontalOptions="End"
                                                        Margin="0,0,15,15"/>
@@ -113,7 +113,7 @@
                     <Grid ColumnDefinitions="auto,*,*" HeightRequest="40" Margin="20,0,0,0">
                         <Label Text="Budgets"
                                FontSize="18"
-                               FontFamily="OpenSansSemibold"
+                               FontFamily="UnboundBold"
                                TextColor="White"/>
                     </Grid>
                     <!--#endregion-->
@@ -136,17 +136,26 @@
                                                 <Image Source="money_bag.png" HeightRequest="40"/>
                                             </Border>
 
-                                            <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="5">
-                                                <Label Text="{Binding Name}"
+                                            <Grid Grid.Column="1" ColumnDefinitions="auto,*,auto">
+                                                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" Spacing="5">
+                                                    <Label Text="{Binding Name}"
                                                        TextColor="White"
                                                        FontFamily="OpenSansSemibold"
                                                        FontSize="15"/>
 
-                                                <Label Text="{Binding DedicatedAmount, StringFormat='dedicated amount ${0:F2}'}"
+                                                    <Label Text="{Binding End, StringFormat='End at {0:dd/yyyy}'}"
                                                        TextColor="Gray"
                                                        FontFamily="OpenSansSemibold"
                                                        FontSize="12"/>
-                                            </VerticalStackLayout>
+                                                </VerticalStackLayout>
+
+                                                <Label Grid.Column="2"
+                                                       Text="{Binding DedicatedAmount,StringFormat='$ {0:F1}'}"
+                                                       TextColor="White"
+                                                       VerticalOptions="CenterAndExpand"
+                                                       Margin="0,0,10,0"
+                                                       FontFamily="UnboundBold"/>
+                                            </Grid>
                                         </Grid>
                                     </Border>
                                 </DataTemplate>

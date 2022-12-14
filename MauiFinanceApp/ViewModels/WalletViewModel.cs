@@ -33,21 +33,24 @@ public partial class WalletViewModel : BaseViewModel
                 Id = 1,
                 Amount = 2000,
                 ExpiryDate = DateTimeOffset.Now.AddYears(5),
-                Name = "Carol Denver"
+                Name = "Carol Denver",
+                Number ="XXXXXXXXXXX8976"
             },
             new()
             {
                 Id = 2,
                 Amount = 4000,
                 ExpiryDate = DateTimeOffset.Now.AddYears(5),
-                Name = "John Idea"
+                Name = "John Idea",
+                Number = "XXXXXXXXXXX8936"
             },
             new()
             {
                 Id = 3,
                 Amount = 6000,
                 ExpiryDate = DateTimeOffset.Now.AddYears(5),
-                Name = "Ariette Bill"
+                Name = "Ariette Bill",
+                Number = "XXXXXXXXXXX8956"
             },
         };
 
