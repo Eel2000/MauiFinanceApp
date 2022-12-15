@@ -1,8 +1,13 @@
 ﻿using CommunityToolkit.Maui;
+using MauiFinanceApp.Controls;
 using MauiFinanceApp.DataAccess;
 using MauiFinanceApp.Pages;
+using MauiFinanceApp.Pages.Dialogs;
 using MauiFinanceApp.ViewModels;
 using Microsoft.Extensions.Logging;
+using Mopups.Hosting;
+using Mopups.Interfaces;
+using Mopups.Services;
 
 namespace MauiFinanceApp;
 
@@ -13,6 +18,7 @@ public static class MauiProgram
         var builder = MauiApp.CreateBuilder();
         builder
             .UseMauiApp<App>()
+            .ConfigureMopups()
             .ConfigureFonts(fonts =>
             {
                 fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
@@ -31,6 +37,12 @@ public static class MauiProgram
         builder.Services.AddSingleton<Account>();
         #endregion
 
+        #region dialogs registrations
+        builder.Services.AddTransient<AddCard>();
+        builder.Services.AddTransient<AddBudget>();
+        builder.Services.AddTransient<BudgetDetails>();
+        #endregion
+
         #region ViewModelRegistration
 
         builder.Services.AddTransient<LoginViewModel>();
@@ -40,10 +52,19 @@ public static class MauiProgram
 
         #endregion
 
+        #region Custom
+        builder.Services.AddSingleton<PanContainer>(); 
+        #endregion
+
         #region Service&DatabaseAccesRegitration
 
         builder.Services.AddSingleton<WalletDatabase>();
 
+        #endregion
+
+
+        #region Lib
+        builder.Services.AddSingleton<IPopupNavigation>(MopupService.Instance);
         #endregion
 
 #if DEBUG

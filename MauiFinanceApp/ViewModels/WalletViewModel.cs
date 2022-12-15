@@ -3,6 +3,8 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MauiFinanceApp.DataAccess;
 using MauiFinanceApp.Models;
+using MauiFinanceApp.Pages.Dialogs;
+using Mopups.Services;
 
 namespace MauiFinanceApp.ViewModels;
 
@@ -155,6 +157,12 @@ public partial class WalletViewModel : BaseViewModel
     void RemoveOperation(int operationId)
     {
         //TODO: logic to remove operation
+    }
+
+    [RelayCommand]
+    void ShowBudgetDetails()
+    {
+        MopupService.Instance.PushAsync(new AddBudget(), true);
     }
 }
 
