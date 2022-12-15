@@ -150,7 +150,7 @@
                                                    Text="$50"
                                                    TextColor="White"
                                                    VerticalOptions="CenterAndExpand"
-                                                   FontSize="20"
+                                                   FontSize="18"
                                                    FontFamily="OpenSansSemibold"/>
                                             </Grid>
                                         </Grid>
@@ -185,7 +185,7 @@
                                                    Text="$50"
                                                    TextColor="White"
                                                    VerticalOptions="CenterAndExpand"
-                                                   FontSize="20"
+                                                   FontSize="18"
                                                    FontFamily="OpenSansSemibold"/>
                                             </Grid>
                                         </Grid>
