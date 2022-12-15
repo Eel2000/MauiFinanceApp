@@ -19,7 +19,8 @@
                 <Button Text="+ Budget" HeightRequest="50"
                         FontFamily="OpenSansSemibold"
                         BackgroundColor="#2b6747"
-                        WidthRequest="90"/>
+                        WidthRequest="90"
+                        Command="{Binding ShowBudgetDetailsCommand}"/>
 
                 <Button Text="+ Card" HeightRequest="50"
                         FontFamily="OpenSansSemibold"
