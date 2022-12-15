@@ -145,7 +145,7 @@ public partial class WalletViewModel : BaseViewModel
     [RelayCommand]
     void AddCard()
     {
-        //TODO: logic to add new card;
+        MopupService.Instance.PushAsync(new AddCard(), true);
     }
 
     [RelayCommand]
@@ -161,6 +161,12 @@ public partial class WalletViewModel : BaseViewModel
 
     [RelayCommand]
     void ShowBudgetDetails()
+    {
+        MopupService.Instance.PushAsync(new BudgetDetails(), true);
+    }
+
+    [RelayCommand]
+    void AddBudget()
     {
         MopupService.Instance.PushAsync(new AddBudget(), true);
     }
