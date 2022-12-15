@@ -8,7 +8,7 @@
 
     <mopups:PopupPage.Animation>
         <mopupsanim:ScaleAnimation
-            DurationIn="700"
+            DurationIn="200"
             EasingIn="SinOut"
             EasingOut="SinIn"
             PositionIn="Bottom"

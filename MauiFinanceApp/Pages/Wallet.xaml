@@ -19,13 +19,16 @@
                 <Button Text="+ Budget" HeightRequest="50"
                         FontFamily="OpenSansSemibold"
                         BackgroundColor="#2b6747"
+                        FontSize="12"
                         WidthRequest="90"
-                        Command="{Binding ShowBudgetDetailsCommand}"/>
+                        Command="{Binding AddBudgetCommand}"/>
 
                 <Button Text="+ Card" HeightRequest="50"
                         FontFamily="OpenSansSemibold"
                         BackgroundColor="#ceaa44"
-                        WidthRequest="90"/>
+                        WidthRequest="90"
+                        FontSize="12"
+                        Command="{Binding AddCardCommand}"/>
             </HorizontalStackLayout>
         </Grid>
         <!--#endregion-->
@@ -34,7 +37,7 @@
             <!--#region Card section -->
             <Grid RowDefinitions="0.3*,*" RowSpacing="-20">
                 <!--#region cards section title -->
-                <Grid HeightRequest="20" Margin="20,0,0,0">
+                <Grid Margin="20,0,0,0">
                     <Label Text="Virtual Cards"
                                FontSize="18"
                                FontFamily="UnboundBold"
