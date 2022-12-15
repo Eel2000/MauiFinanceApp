@@ -5,7 +5,7 @@
              x:Class="MauiFinanceApp.Pages.Wallet"
              Title="Wallet" BackgroundColor="#0d0d0d">
 
-    <Grid RowDefinitions="0.22*,*">
+    <Grid RowDefinitions="0.24*,*">
         <!--#region Title -->
         <Grid RowDefinitions="0.4*,*">
             <Label Text="Wallet" 
@@ -13,7 +13,7 @@
                    FontFamily="UnboundBold"
                    TextColor="White"
                    VerticalOptions="Center"
-                   Margin="10,5,0,0"/>
+                   Margin="10,10,0,0"/>
 
             <HorizontalStackLayout Grid.Row="1" Spacing="5" HorizontalOptions="CenterAndExpand">
                 <Button Text="+ Budget" HeightRequest="50"
