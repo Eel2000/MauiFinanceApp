@@ -34,6 +34,7 @@ public partial class App : Application
     /// </summary>
     void CustomEntryHandler()
     {
+#if ANDROID
         Microsoft.Maui.Handlers.EntryHandler.Mapper.AppendToMapping(nameof(CustomEntry), (handler, view) =>
         {
             if (view is CustomEntry)
@@ -41,5 +42,6 @@ public partial class App : Application
                 handler.PlatformView.SetBackgroundColor(Colors.Transparent.ToPlatform());
             }
         });
+#endif
     }
 }

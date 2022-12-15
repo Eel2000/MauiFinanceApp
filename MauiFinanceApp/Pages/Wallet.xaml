@@ -127,7 +127,7 @@
                             <CollectionView.ItemTemplate>
                                 <DataTemplate>
                                     <Border HeightRequest="80" 
-                                            StrokeShape="RoundRectangle 15" BackgroundColor="#222222" 
+                                            StrokeShape="RoundRectangle 10" BackgroundColor="#222222" 
                                             Stroke="#222222">
                                         <Grid ColumnDefinitions="0.3*,*">
                                             <Border Margin="10" StrokeShape="RoundRectangle 50" 
