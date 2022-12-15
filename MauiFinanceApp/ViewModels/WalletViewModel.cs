@@ -162,7 +162,7 @@ public partial class WalletViewModel : BaseViewModel
     [RelayCommand]
     void ShowBudgetDetails()
     {
-        MopupService.Instance.PushAsync(new BudgetDetails(), true);
+        MopupService.Instance.PushAsync(new AddBudget(), true);
     }
 }
 

@@ -2,6 +2,7 @@
 using MauiFinanceApp.Controls;
 using MauiFinanceApp.DataAccess;
 using MauiFinanceApp.Pages;
+using MauiFinanceApp.Pages.Dialogs;
 using MauiFinanceApp.ViewModels;
 using Microsoft.Extensions.Logging;
 using Mopups.Hosting;
@@ -34,6 +35,12 @@ public static class MauiProgram
         builder.Services.AddSingleton<Details>();
         builder.Services.AddSingleton<Wallet>();
         builder.Services.AddSingleton<Account>();
+        #endregion
+
+        #region dialogs registrations
+        builder.Services.AddTransient<AddCard>();
+        builder.Services.AddTransient<AddBudget>();
+        builder.Services.AddTransient<BudgetDetails>();
         #endregion
 
         #region ViewModelRegistration
