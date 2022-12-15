@@ -5,9 +5,9 @@ namespace MauiFinanceApp.ViewModels;
 public partial class BaseViewModel : ObservableObject
 {
     [ObservableProperty]
-    private string _title;
+    string _title;
 
     [ObservableProperty]
-    private bool _isBusy;
+    bool _isBusy;
 }
 
