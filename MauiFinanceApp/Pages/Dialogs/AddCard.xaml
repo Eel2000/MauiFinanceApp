@@ -2,10 +2,71 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:MauiFinanceApp.Controls"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="MauiFinanceApp.Pages.Dialogs.AddCard">
 
-    <Grid HeightRequest="500">
-        
+    <Grid HeightRequest="500" BackgroundColor="#0d0d0d">
+        <Grid RowDefinitions="0.15*,auto,*" >
+            <StackLayout VerticalOptions="Center">
+                <Label Text="Card creation"
+                   TextColor="White"
+                   FontFamily="OpenSansSemibold"
+                   FontSize="Title"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+            </StackLayout>
+
+            <Grid Grid.Row="1" Margin="10">
+                <Border StrokeShape="RoundRectangle 120" HeightRequest="100" WidthRequest="100" Stroke="#ceaa44" BackgroundColor="#ceaa44">
+                    <Image Source="credit_card" HeightRequest="75"/>
+                </Border>
+            </Grid>
+
+            <Grid Grid.Row="2" RowDefinitions="*,0.6*" RowSpacing="0">
+                <VerticalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand" WidthRequest="400">
+                    <Frame CornerRadius="10" Margin="10,0,10,0" BackgroundColor="#222222" BorderColor="#222222">
+                        <controls:CustomEntry Keyboard="Text" 
+                                          Placeholder="Card name" 
+                                          HeightRequest="40"
+                                          FontFamily="OpenSansSemibold"
+                                          FontSize="Body"
+                                          TextColor="Gray" 
+                                          PlaceholderColor="Gray"/>
+                    </Frame>
+
+                    <Frame CornerRadius="10" Margin="10,0,10,0" BackgroundColor="#222222" BorderColor="#222222">
+                        <controls:CustomEntry Keyboard="Numeric"
+                                          Placeholder="Card dedicated amount"
+                                          HeightRequest="40"
+                                          FontFamily="OpenSansSemibold"
+                                          FontSize="Body" 
+                                          TextColor="Gray" 
+                                          PlaceholderColor="Gray">
+                            <controls:CustomEntry.Behaviors>
+                                <toolkit:MaskedBehavior Mask="XXXX,XX"/>
+                            </controls:CustomEntry.Behaviors>
+                        </controls:CustomEntry>
+                    </Frame>
+                    
+                    <Label Text="The validity of the current card is for 5 years starting from the creation date"
+                           FontSize="Caption"
+                           FontFamily="OpenSansRegular"
+                           TextColor="Gray"
+                           HorizontalTextAlignment="Center"
+                           LineBreakMode="WordWrap"
+                           Margin="10,0,10,0"/>
+
+                </VerticalStackLayout>
+
+                <StackLayout Grid.Row="2" Margin="10,10,10,10" >
+                    <Button HeightRequest="60" 
+                                    Text="Add card"
+                                    FontSize="Body"
+                                    FontFamily="OpenSansSemibold"
+                                    BackgroundColor="#2b6747"/>
+                </StackLayout>
+            </Grid>
+        </Grid>
     </Grid>
-    
+
 </ContentView>
