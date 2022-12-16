@@ -18,6 +18,8 @@
             </Grid>
         </StackLayout>
         <!--#endregion-->
+
+        <!--#region Body -->
         <ScrollView Grid.Row="1" >
             <Grid RowDefinitions="2*,*">
                 <!--#region Stage -->
@@ -31,6 +33,7 @@
                 </Grid>
             </Grid>
         </ScrollView>
+        <!--#endregion-->
     </Grid>
 
 </ContentPage>
