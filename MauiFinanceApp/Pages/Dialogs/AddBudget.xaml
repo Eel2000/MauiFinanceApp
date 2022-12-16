@@ -22,7 +22,9 @@
                         Padding="10" HeightRequest="500"
                         VerticalOptions="EndAndExpand" 
                         Stroke="white" StrokeShape="RoundRectangle 10,10,0,0">
+                    <Grid>
 
+                    </Grid>
                 </Border>
             </controls:PanContainer>
         </AbsoluteLayout>
