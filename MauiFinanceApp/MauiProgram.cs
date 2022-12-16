@@ -9,6 +9,7 @@ using Mopups.Hosting;
 using Mopups.Interfaces;
 using Mopups.Services;
 using OverSheet.Hosting;
+using SkiaSharp.Views.Maui.Controls.Hosting;
 
 namespace MauiFinanceApp;
 
@@ -18,6 +19,7 @@ public static class MauiProgram
     {
         var builder = MauiApp.CreateBuilder();
         builder
+            .UseSkiaSharp(true)
             .UseMauiApp<App>()
             .ConfigureMopups()
             .ConfigureFonts(fonts =>

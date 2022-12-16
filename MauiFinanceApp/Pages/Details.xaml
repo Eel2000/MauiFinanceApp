@@ -2,7 +2,10 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MauiFinanceApp.ViewModels"
+             xmlns:local="clr-namespace:MauiFinanceApp;assembly=MauiFinanceApp"
+             xmlns:lvc="clr-namespace:LiveChartsCore.SkiaSharpView.Maui;assembly=LiveChartsCore.SkiaSharpView.Maui"
              x:Class="MauiFinanceApp.Pages.Details"
+             x:DataType="vm:DetailsViewModel"
              Title="Details" BackgroundColor="#0d0d0d">
 
     <Grid RowDefinitions="0.29*,*">
@@ -24,7 +27,9 @@
             <Grid RowDefinitions="2*,*">
                 <!--#region Stage -->
                 <Frame Margin="15">
-
+                    <lvc:CartesianChart
+                        Series="{Binding Series}">
+                    </lvc:CartesianChart>
                 </Frame>
                 <!--#endregion-->
 
