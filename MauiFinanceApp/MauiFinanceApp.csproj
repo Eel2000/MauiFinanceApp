@@ -113,6 +113,9 @@
 	  <MauiXaml Update="Pages\Dialogs\BudgetDetails.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Pages\Dialogs\CardDetails.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Pages\Dialogs\More.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
