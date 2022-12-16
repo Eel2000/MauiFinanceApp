@@ -8,6 +8,7 @@ using Microsoft.Extensions.Logging;
 using Mopups.Hosting;
 using Mopups.Interfaces;
 using Mopups.Services;
+using OverSheet.Hosting;
 
 namespace MauiFinanceApp;
 
@@ -26,7 +27,8 @@ public static class MauiProgram
                 fonts.AddFont("Unbounded-Bold.ttf", "UnboundBold");
                 fonts.AddFont("Unbounded-Light.ttf", "UnboundLight");
             })
-            .UseMauiCommunityToolkit();
+            .UseMauiCommunityToolkit()
+            .ConfigureOverSheet();
 
         #region PageRegistration
 

@@ -5,6 +5,7 @@ using MauiFinanceApp.DataAccess;
 using MauiFinanceApp.Models;
 using MauiFinanceApp.Pages.Dialogs;
 using Mopups.Services;
+using OverSheet;
 
 namespace MauiFinanceApp.ViewModels;
 
@@ -145,7 +146,8 @@ public partial class WalletViewModel : BaseViewModel
     [RelayCommand]
     void AddCard()
     {
-        MopupService.Instance.PushAsync(new AddCard(), true);
+        //MopupService.Instance.PushAsync(new AddCard(), true);
+        Shell.Current.ShowBottomSheet(new More(), 10);
     }
 
     [RelayCommand]
