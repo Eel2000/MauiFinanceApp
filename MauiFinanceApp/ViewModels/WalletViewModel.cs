@@ -147,7 +147,7 @@ public partial class WalletViewModel : BaseViewModel
     void AddCard()
     {
         //MopupService.Instance.PushAsync(new AddCard(), true);
-        Shell.Current.ShowBottomSheet(new More(), 10);
+        Shell.Current.ShowBottomSheet(new AddCard(), 20);
     }
 
     [RelayCommand]
@@ -164,13 +164,13 @@ public partial class WalletViewModel : BaseViewModel
     [RelayCommand]
     void ShowBudgetDetails()
     {
-        MopupService.Instance.PushAsync(new BudgetDetails(), true);
+        Shell.Current.ShowBottomSheet(new BudgetDetails(), 20);
     }
 
     [RelayCommand]
     void AddBudget()
     {
-        MopupService.Instance.PushAsync(new AddBudget(), true);
+        Shell.Current.ShowBottomSheet(new AddBudget(), 20);
     }
 }
 

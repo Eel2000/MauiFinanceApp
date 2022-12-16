@@ -1,32 +1,85 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<mopups:PopupPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:mopups="clr-namespace:Mopups.Pages;assembly=Mopups"
-             xmlns:mopupsanim="clr-namespace:Mopups.Animations;assembly=Mopups"
              xmlns:controls="clr-namespace:MauiFinanceApp.Controls"
              x:Class="MauiFinanceApp.Pages.Dialogs.AddBudget">
-    <mopups:PopupPage.Animation>
-        <mopupsanim:ScaleAnimation
-            DurationIn="200"
-            EasingIn="SinOut"
-            EasingOut="SinIn"
-            PositionIn="Bottom"
-            PositionOut="Bottom"
-            HasBackgroundAnimation="True"/>
-    </mopups:PopupPage.Animation>
 
-    <mopups:PopupPage.Content>
-        <AbsoluteLayout>
-            <controls:PanContainer AbsoluteLayout.LayoutBounds="0.5,1,1,1" AbsoluteLayout.LayoutFlags="XProportional,YProportional,WidthProportional,HeightProportional">
-                <Border BackgroundColor="White"
-                        Padding="10" HeightRequest="500"
-                        VerticalOptions="EndAndExpand" 
-                        Stroke="white" StrokeShape="RoundRectangle 10,10,0,0">
-                    <Grid>
+    <Grid HeightRequest="500" BackgroundColor="#0d0d0d">
+        <ScrollView>
+            <Grid HeightRequest="500" RowDefinitions="0.2*,auto,*" >
+                <StackLayout VerticalOptions="Center">
+                    <Label Text="budget creation"
+                   TextColor="White"
+                   FontFamily="OpenSansSemibold"
+                   FontSize="Title"
+                   HorizontalOptions="Center"
+                   VerticalOptions="CenterAndExpand"/>
+                </StackLayout>
 
+                <Grid Grid.Row="1" Margin="20">
+                    <Border StrokeShape="RoundRectangle 120" HeightRequest="100" WidthRequest="100" Stroke="#ceaa44" BackgroundColor="#ceaa44">
+                        <Image Source="money_bag" HeightRequest="80"/>
+                    </Border>
+                </Grid>
+
+                <ScrollView Grid.Row="2">
+                    <Grid  RowDefinitions="*,auto,0.6*" RowSpacing="10">
+                        <VerticalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand" WidthRequest="400">
+                            <Frame CornerRadius="10" Margin="10,0,10,0" BackgroundColor="#222222" BorderColor="#222222">
+                                <controls:CustomEntry Keyboard="Text" 
+                                          Placeholder="enter budget title" 
+                                          HeightRequest="40"
+                                          FontFamily="OpenSansSemibold"
+                                          FontSize="Body"
+                                          TextColor="Gray" 
+                                          PlaceholderColor="Gray"/>
+                            </Frame>
+
+                            <Frame CornerRadius="10" Margin="10,0,10,0" BackgroundColor="#222222" BorderColor="#222222">
+                                <controls:CustomEntry Keyboard="Numeric"
+                                          Placeholder="enter budget dedicated amount"
+                                          HeightRequest="40"
+                                          FontFamily="OpenSansSemibold"
+                                          FontSize="Body" 
+                                          TextColor="Gray" 
+                                          PlaceholderColor="Gray"/>
+                            </Frame>
+
+                            
+                        </VerticalStackLayout>
+
+                        <Grid Grid.Row="1" ColumnDefinitions="auto,*,auto" Margin="20,10,20,0">
+                            <VerticalStackLayout>
+                                <Label Text="Start On"
+                                       FontSize="Body"
+                                       TextColor="Gray"
+                                       FontFamily="OpenSansSemibold"/>
+
+                                <DatePicker FontFamily="OpenSansSemibold" FontSize="15"
+                                        Format="dd/MM"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="2" Spacing="5">
+                                <Label Text="End On"
+                                       FontSize="Body"
+                                       TextColor="Gray"
+                                       FontFamily="OpenSansSemibold"/>
+
+                                <DatePicker FontFamily="OpenSansSemibold" FontSize="15"
+                                        Format="dd/MM"/>
+                            </VerticalStackLayout>
+                        </Grid>
+
+                        <StackLayout Grid.Row="2" Margin="10,10,10,10" >
+                            <Button HeightRequest="60" 
+                                    Text="Validate"
+                                    FontSize="Body"
+                                    FontFamily="OpenSansSemibold"
+                                    BackgroundColor="#2b6747"/>
+                        </StackLayout>
                     </Grid>
-                </Border>
-            </controls:PanContainer>
-        </AbsoluteLayout>
-    </mopups:PopupPage.Content>
-</mopups:PopupPage>
+                </ScrollView>
+            </Grid>
+        </ScrollView>
+    </Grid>
+</ContentView>
