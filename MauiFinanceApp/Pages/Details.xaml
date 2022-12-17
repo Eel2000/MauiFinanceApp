@@ -66,12 +66,12 @@
 
                             <VerticalStackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
                                 <Label Text="Budget"
-                                       FontSize="20"
+                                       FontSize="17"
                                        TextColor="White"
                                        FontFamily="OpenSansSemibold"/>
 
                                 <Label Text="Set your budget goal"
-                                       FontSize="15"
+                                       FontSize="13"
                                        TextColor="Gray"
                                        FontFamily="OpenSansSemibold"/>
                             </VerticalStackLayout>
