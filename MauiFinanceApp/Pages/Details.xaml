@@ -12,7 +12,7 @@
         <!--#region Top Bar -->
         <StackLayout Grid.Row="0" BackgroundColor="#28156a" Opacity="0.8">
             <Grid VerticalOptions="CenterAndExpand">
-                <Label Text="Dashboard" 
+                <Label Text="Analytics" 
                        FontSize="30"
                        FontFamily="OpenSansSemibold"
                        TextColor="White"
@@ -24,17 +24,67 @@
 
         <!--#region Body -->
         <ScrollView Grid.Row="1" >
-            <Grid RowDefinitions="2*,*">
-                <!--#region Stage -->
-                <Frame Margin="15">
-                    <lvc:CartesianChart
-                        Series="{Binding Series}">
-                    </lvc:CartesianChart>
+            <Grid RowDefinitions="2*,auto,*">
+                <!--#region Stats -->
+                <Frame Margin="15" BackgroundColor="#222222" BorderColor="#222222" HasShadow="True">
+                    <Grid RowDefinitions="0.5*,*">
+                        <Grid ColumnDefinitions="auto,*,auto">
+                            <VerticalStackLayout Spacing="5">
+                                <Label Text="$358"
+                                       FontSize="25"
+                                       TextColor="White"
+                                       FontFamily="OpenSansSemibold"/>
+
+                                <Label Text="Total Spend"
+                                       FontSize="15"
+                                       TextColor="Gray"
+                                       FontFamily="OpenSansSemibold"/>
+                            </VerticalStackLayout>
+
+
+                            <VerticalStackLayout Grid.Column="2">
+                                
+                            </VerticalStackLayout>
+                        </Grid>
+                        
+                        <lvc:CartesianChart Grid.Row="1" AnimationsSpeed="5"
+                                Series="{Binding Series}">
+                        </lvc:CartesianChart>
+                    </Grid>
                 </Frame>
                 <!--#endregion-->
 
-                <Grid RowDefinitions="0.3*,*">
+                <Grid Grid.Row="2" RowDefinitions="0.3*,*" Margin="0,20,0,0">
+                    <!--#region Add budget region -->
+                    <Border BackgroundColor="#222222" Stroke="#222222"
+                            Margin="10,10,10,0" HeightRequest="80" StrokeShape="RoundRectangle 10">
+                        <Grid ColumnDefinitions="0.4*,*,auto,*">
+                            <Border StrokeShape="RoundRectangle 50" HeightRequest="50" WidthRequest="50">
+                                <!--TODO image for busget-->
+                            </Border>
 
+                            <VerticalStackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
+                                <Label Text="Budget"
+                                       FontSize="20"
+                                       TextColor="White"
+                                       FontFamily="OpenSansSemibold"/>
+
+                                <Label Text="Set your budget goal"
+                                       FontSize="15"
+                                       TextColor="Gray"
+                                       FontFamily="OpenSansSemibold"/>
+                            </VerticalStackLayout>
+
+                            <VerticalStackLayout Grid.Column="3">
+                                <!--Plus image-->
+                            </VerticalStackLayout>
+                        </Grid>
+                    </Border>
+                    <!--#endregion-->
+
+                    <Grid Grid.Row="1">
+                        
+                    </Grid>
                 </Grid>
             </Grid>
         </ScrollView>
