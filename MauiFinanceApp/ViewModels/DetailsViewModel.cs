@@ -7,8 +7,8 @@ namespace MauiFinanceApp.ViewModels;
 
 public partial class DetailsViewModel : BaseViewModel
 {
-     public ISeries[] Series { get; set; } = new ISeries[]
-        {
+    public ISeries[] Series { get; set; } = new ISeries[]
+       {
             new ColumnSeries<int>
             {
                 Values = new [] { 4, 4, 7, 2, 8 },
@@ -21,5 +21,5 @@ public partial class DetailsViewModel : BaseViewModel
                 Fill = new SolidColorPaint(SKColors.Red),
                 Stroke = null
             }
-        };
+       };
 }
