@@ -56,6 +56,10 @@
                                 <!--#region Cards -->
                                 <Grid Margin="10,0,0,0">
                                     <Border HeightRequest="220" WidthRequest="330" StrokeShape="RoundRectangle 20" Margin="0,0,10,0">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding CardDetails}" CommandParameter="{Binding .}"/>
+                                        </Border.GestureRecognizers>
+                                        
                                         <Grid ColumnDefinitions="*,0.6*">
 
                                             <!--#region Card body -->

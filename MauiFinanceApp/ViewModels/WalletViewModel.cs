@@ -151,6 +151,13 @@ public partial class WalletViewModel : BaseViewModel
     }
 
     [RelayCommand]
+    void CardDetails()
+    {
+        //TODO: fixe the gesture command on the card tape
+        Shell.Current.ShowBottomSheet(new CardDetails(), 20);
+    }
+
+    [RelayCommand]
     void AddOperation()
     {
         //TODO: Logic to add new operation

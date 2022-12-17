@@ -2,6 +2,7 @@
 <ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:controls="clr-namespace:MauiFinanceApp.Controls"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              x:Class="MauiFinanceApp.Pages.Dialogs.AddBudget">
 
     <Grid HeightRequest="600" BackgroundColor="#0d0d0d">
@@ -21,7 +22,7 @@
                     </Border>
                 </Grid>
 
-                <Grid Grid.Row="2" RowDefinitions="*,auto,0.6*" RowSpacing="10">
+                <Grid Grid.Row="2" RowDefinitions="*,auto,0.6*" RowSpacing="0">
                     <VerticalStackLayout Spacing="10" HorizontalOptions="CenterAndExpand" WidthRequest="400">
                         <Frame CornerRadius="10" Margin="10,0,10,0" BackgroundColor="#222222" BorderColor="#222222">
                             <controls:CustomEntry Keyboard="Text" 
@@ -34,13 +35,17 @@
                         </Frame>
 
                         <Frame CornerRadius="10" Margin="10,0,10,0" BackgroundColor="#222222" BorderColor="#222222">
-                            <controls:CustomEntry Keyboard="Numeric"
+                        <controls:CustomEntry Keyboard="Numeric"
                                           Placeholder="enter budget dedicated amount"
                                           HeightRequest="40"
                                           FontFamily="OpenSansSemibold"
                                           FontSize="Body" 
                                           TextColor="Gray" 
-                                          PlaceholderColor="Gray"/>
+                                          PlaceholderColor="Gray">
+                            <controls:CustomEntry.Behaviors>
+                                <toolkit:MaskedBehavior Mask="XXXX,XX"/>
+                            </controls:CustomEntry.Behaviors>
+                        </controls:CustomEntry>
                         </Frame>
 
 
@@ -54,8 +59,31 @@
                                        FontFamily="OpenSansSemibold"/>
 
                             <DatePicker FontFamily="OpenSansSemibold" FontSize="15"
-                                        Format="dd/MM" TextColor="Gray"/>
+                                        Format="dd/MM/yyyy" TextColor="Gray"/>
                         </VerticalStackLayout>
+
+                    <StackLayout Grid.Column="1">
+                        <Label Text="Select cards"
+                                FontSize="Body"
+                                TextColor="Gray"
+                                FontFamily="OpenSansSemibold"
+                               HorizontalOptions="Center"/>
+
+                        <Picker Title="Cards" 
+                                FontFamily="OpenSansSemibold" 
+                                FontSize="15" 
+                                TextColor="Gray"
+                                SelectedIndex="0"
+                                VerticalOptions="CenterAndExpand"
+                                HorizontalTextAlignment="Center" 
+                                TitleColor="White" Margin="10,0,10,0">
+                            <Picker.Items>
+                                <x:String>Blue</x:String>
+                                <x:String>Premium</x:String>
+                                <x:String>standard</x:String>
+                            </Picker.Items>
+                        </Picker>
+                    </StackLayout>
 
                         <VerticalStackLayout Grid.Column="2" Spacing="5">
                             <Label Text="End On"
@@ -64,7 +92,7 @@
                                        FontFamily="OpenSansSemibold"/>
 
                             <DatePicker FontFamily="OpenSansSemibold" FontSize="15"
-                                        Format="dd/MM" TextColor="Gray"/>
+                                        Format="dd/MM/yyyy" TextColor="Gray"/>
                         </VerticalStackLayout>
                     </Grid>
 
