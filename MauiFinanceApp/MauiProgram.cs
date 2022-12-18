@@ -36,8 +36,8 @@ public static class MauiProgram
 
         builder.Services.AddTransient<Home>();
         builder.Services.AddTransient<Login>();
-        builder.Services.AddSingleton<Details>();
         builder.Services.AddSingleton<Wallet>();
+        builder.Services.AddTransient<Details>();
         builder.Services.AddSingleton<Account>();
         #endregion
 
@@ -52,6 +52,7 @@ public static class MauiProgram
         builder.Services.AddTransient<LoginViewModel>();
         builder.Services.AddTransient<WalletViewModel>();
         builder.Services.AddTransient<AccountViewModel>();
+        builder.Services.AddTransient<DetailsViewModel>();
         builder.Services.AddTransient<MainPageViewModel>();
 
         #endregion

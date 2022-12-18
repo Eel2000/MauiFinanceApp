@@ -61,7 +61,11 @@
                         <Grid ColumnDefinitions="0.4*,*,auto,*">
                             <Border StrokeShape="RoundRectangle 50" HeightRequest="50" WidthRequest="50" BackgroundColor="Black" Stroke="Black">
                                 <!--TODO image for busget-->
-                                <Image Source="data" HeightRequest="30"/>
+                                <Image x:Name="addImage" Source="data" HeightRequest="30">
+                                    <Image.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                    </Image.GestureRecognizers>
+                                </Image>
                             </Border>
 
                             <VerticalStackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">

@@ -3,6 +3,9 @@ using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
 using CommunityToolkit.Mvvm.ComponentModel;
+using OverSheet;
+using MauiFinanceApp.Pages.Dialogs;
+using CommunityToolkit.Mvvm.Input;
 
 namespace MauiFinanceApp.ViewModels;
 
@@ -19,4 +22,10 @@ public partial class DetailsViewModel : BaseViewModel
                 MaxBarWidth = double.MaxValue
             }
        };
+
+    [RelayCommand]
+    void AddBudget()
+    {
+        Shell.Current.ShowBottomSheet(new AddBudget(), 20);
+    }
 }
