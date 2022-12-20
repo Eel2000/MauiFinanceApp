@@ -38,7 +38,7 @@ public static class MauiProgram
         builder.Services.AddTransient<Login>();
         builder.Services.AddSingleton<Wallet>();
         builder.Services.AddTransient<Details>();
-        builder.Services.AddSingleton<Account>();
+        builder.Services.AddTransient<Account>();
         #endregion
 
         #region dialogs registrations
