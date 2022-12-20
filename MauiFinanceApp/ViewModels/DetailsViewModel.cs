@@ -23,6 +23,7 @@ public partial class DetailsViewModel : BaseViewModel
             }
        };
 
+
     [RelayCommand]
     void AddBudget()
     {

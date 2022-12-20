@@ -47,7 +47,7 @@
                             </VerticalStackLayout>
                         </Grid>
 
-                        <lvc:CartesianChart Grid.Row="1" AnimationsSpeed="5"
+                        <lvc:CartesianChart Grid.Row="1"
                                 Series="{Binding Series}">
                         </lvc:CartesianChart>
                     </Grid>
@@ -63,7 +63,7 @@
                                 <!--TODO image for busget-->
                                 <Image x:Name="addImage" Source="data" HeightRequest="30">
                                     <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                                        <TapGestureRecognizer Command="{Binding AddBudgetCommand}"/>
                                     </Image.GestureRecognizers>
                                 </Image>
                             </Border>
