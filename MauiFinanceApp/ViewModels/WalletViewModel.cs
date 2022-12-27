@@ -133,14 +133,7 @@ public partial class WalletViewModel : BaseViewModel
     [RelayCommand]
     void CardSelected(Card card)
     {
-        var newList = Cards;
-        var selectedCard = newList.FirstOrDefault(x => x.Id == card.Id);
-        selectedCard.IsSelected = true;
-
-        newList.Remove(selectedCard);
-        newList.Add(selectedCard);
-
-        Cards = new(newList);
+        Shell.Current.ShowBottomSheet(new CardDetails(), 20);
     }
 
     [RelayCommand]

@@ -7,6 +7,24 @@
              xmlns:model="clr-namespace:MauiFinanceApp.Models"
              Title="Wallet" BackgroundColor="#0d0d0d">
 
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="Black" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
     <Grid RowDefinitions="0.24*,*">
         <!--#region Title -->
         <Grid RowDefinitions="0.4*,*">
@@ -53,7 +71,8 @@
                                     SelectionChangedCommand="{Binding CardSelectedCommand}"
                                     SelectionMode="Single"
                                     SelectedItem="{Binding SelectedCard}"
-                                    SelectionChangedCommandParameter="{Binding SelectedCard}">
+                                    SelectionChangedCommandParameter="{Binding SelectedCard}"
+                                    BackgroundColor="Black">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Horizontal" SnapPointsType="Mandatory" SnapPointsAlignment="Center"/>
                         </CollectionView.ItemsLayout>
@@ -62,10 +81,7 @@
                                 <!--#region Cards -->
                                 <Grid Margin="10,0,0,0">
                                     <Border HeightRequest="220" WidthRequest="330" StrokeShape="RoundRectangle 20" Margin="0,0,10,0">
-                                        <!--<Border.GestureRecognizers>
-                                            <ClickGestureRecognizer Command="{Binding Card}"/>
-                                        </Border.GestureRecognizers>-->
-                                        
+
                                         <Grid ColumnDefinitions="*,0.6*">
 
                                             <!--#region Card body -->
