@@ -16,7 +16,7 @@
                         <VisualState x:Name="Selected">
                             <VisualState.Setters>
                                 <Setter Property="BackgroundColor"
-                                        Value="Black" />
+                                        Value="Transparent" />
                             </VisualState.Setters>
                         </VisualState>
                     </VisualStateGroup>
@@ -71,8 +71,7 @@
                                     SelectionChangedCommand="{Binding CardSelectedCommand}"
                                     SelectionMode="Single"
                                     SelectedItem="{Binding SelectedCard}"
-                                    SelectionChangedCommandParameter="{Binding SelectedCard}"
-                                    BackgroundColor="Black">
+                                    SelectionChangedCommandParameter="{Binding SelectedCard}">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Horizontal" SnapPointsType="Mandatory" SnapPointsAlignment="Center"/>
                         </CollectionView.ItemsLayout>
