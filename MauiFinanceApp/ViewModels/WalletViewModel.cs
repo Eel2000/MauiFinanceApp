@@ -134,6 +134,10 @@ public partial class WalletViewModel : BaseViewModel
     void CardSelected(Card card)
     {
         var c = Cards.FirstOrDefault(x => x.Id == card.Id);
+        foreach(var crd in Cards)
+        {
+            crd.IsSelected = false;
+        }
         c.IsSelected = false;
         Shell.Current.ShowBottomSheet(new CardDetails(), 20);
     }
