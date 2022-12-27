@@ -18,11 +18,8 @@ public partial class WalletViewModel : BaseViewModel
     [ObservableProperty] private ObservableCollection<Operation> _operations = new();
     [ObservableProperty] private ObservableCollection<Budget> _budgets = new();
 
-    [ObservableProperty]
-    private decimal _amount;
-
-    [ObservableProperty]
-    private Card _selectedCard;
+    [ObservableProperty] private decimal _amount;
+    [ObservableProperty] private Card _selectedCard;
 
     public WalletViewModel(WalletDatabase database)
     {
