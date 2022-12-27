@@ -21,6 +21,9 @@ public partial class WalletViewModel : BaseViewModel
     [ObservableProperty]
     private decimal _amount;
 
+    [ObservableProperty]
+    private Card _selectedCard;
+
     public WalletViewModel(WalletDatabase database)
     {
         _database = database;
