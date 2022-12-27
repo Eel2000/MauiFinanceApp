@@ -58,14 +58,13 @@
                     <!--#region Add budget region -->
                     <Border BackgroundColor="#222222" Stroke="#222222"
                             Margin="10,10,10,0" HeightRequest="80" StrokeShape="RoundRectangle 10">
+                        <Border.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding AddBudgetCommand}"/>
+                        </Border.GestureRecognizers>
                         <Grid ColumnDefinitions="0.4*,*,auto,*">
                             <Border StrokeShape="RoundRectangle 50" HeightRequest="50" WidthRequest="50" BackgroundColor="Black" Stroke="Black">
                                 <!--TODO image for busget-->
-                                <Image x:Name="addImage" Source="data" HeightRequest="30">
-                                    <Image.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
-                                    </Image.GestureRecognizers>
-                                </Image>
+                                <Image x:Name="addImage" Source="data" HeightRequest="30"/>
                             </Border>
 
                             <VerticalStackLayout Grid.Column="1" VerticalOptions="CenterAndExpand">
