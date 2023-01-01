@@ -149,7 +149,8 @@
 
                     <Grid Row="1" Margin="10,-20,10,0">
                         <CollectionView ItemsSource="{Binding Budgets}" ItemsUpdatingScrollMode="KeepLastItemInView" 
-                                        ItemSizingStrategy="MeasureAllItems">
+                                        ItemSizingStrategy="MeasureAllItems" SelectionChangedCommand="{Binding ShowBudgetDetailsCommand}"
+                                        SelectionMode="Single">
                             <CollectionView.ItemsLayout>
                                 <LinearItemsLayout ItemSpacing="5" SnapPointsAlignment="Start" Orientation="Vertical"/>
                             </CollectionView.ItemsLayout>
