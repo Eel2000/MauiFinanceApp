@@ -175,7 +175,6 @@ public partial class WalletViewModel : BaseViewModel
 
     async void UpdateList()
     {
-        await Shell.Current.DisplayAlert("Wallet", "new card added", "ok");
         var rawCards = await _database.GetCardsAsync();
         Cards = new ObservableCollection<Card>(rawCards.OrderByDescending(x => x.IsDefault));
         Shell.Current.HideBottomSheet();
