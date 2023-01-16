@@ -61,6 +61,12 @@ namespace MauiFinanceApp.DataAccess
         public async ValueTask RemoveCardAsync(int cardId)
             => await Database.DeleteAsync(cardId);
 
+        public async ValueTask UpdateCardAsync(Card card)
+            => await Database.InsertOrReplaceAsync(card);
+
+        public async ValueTask<Card> GetDefaultCardAsync()
+            => await Database.Table<Card>().FirstOrDefaultAsync(x => x.IsDefault);
+
         #endregion
 
         #region OperationOps

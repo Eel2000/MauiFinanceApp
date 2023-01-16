@@ -151,7 +151,7 @@ public partial class WalletViewModel : BaseViewModel
     void CardSelected(Card card)
     {
         var c = Cards.FirstOrDefault(x => x.Id == card.Id);
-        foreach(var crd in Cards)
+        foreach (var crd in Cards)
         {
             crd.IsSelected = false;
         }
@@ -163,7 +163,7 @@ public partial class WalletViewModel : BaseViewModel
     void AddCard()
     {
         //MopupService.Instance.PushAsync(new AddCard(), true);
-        Shell.Current.ShowBottomSheet(new AddCard(), 20);
+        Shell.Current.ShowBottomSheet(new AddCard(_database, UpdateList), 20);
     }
 
     [RelayCommand]
@@ -171,6 +171,14 @@ public partial class WalletViewModel : BaseViewModel
     {
         //TODO: fixe the gesture command on the card tape
         Shell.Current.ShowBottomSheet(new CardDetails(), 20);
+    }
+
+    async void UpdateList()
+    {
+        await Shell.Current.DisplayAlert("Wallet", "new card added", "ok");
+        var rawCards = await _database.GetCardsAsync();
+        Cards = new ObservableCollection<Card>(rawCards.OrderByDescending(x => x.IsDefault));
+        Shell.Current.HideBottomSheet();
     }
 
     [RelayCommand]
