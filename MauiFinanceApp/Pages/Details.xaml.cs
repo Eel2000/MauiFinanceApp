@@ -14,6 +14,6 @@ public partial class Details : ContentPage
 
     private void TapGestureRecognizer_Tapped(object sender, TappedEventArgs e)
     {
-		Shell.Current.ShowBottomSheet(new AddBudget(), 20);
+		Shell.Current.DisplayAlert("Wallet", "test", "OK");
     }
 }

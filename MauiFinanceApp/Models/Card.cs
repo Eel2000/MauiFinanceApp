@@ -12,5 +12,6 @@ public class Card
     public bool IsSelected { get; set; }=false;
     public  string Number { get; set; }
     public  string Name { get; set; }
+    public bool IsDefault { get; set; }
 }
 

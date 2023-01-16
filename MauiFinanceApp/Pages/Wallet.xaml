@@ -2,8 +2,28 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:MauiFinanceApp.ViewModels"
+             x:DataType="vm:WalletViewModel"
              x:Class="MauiFinanceApp.Pages.Wallet"
+             xmlns:model="clr-namespace:MauiFinanceApp.Models"
              Title="Wallet" BackgroundColor="#0d0d0d">
+
+    <ContentPage.Resources>
+        <Style TargetType="Grid">
+            <Setter Property="VisualStateManager.VisualStateGroups">
+                <VisualStateGroupList>
+                    <VisualStateGroup x:Name="CommonStates">
+                        <VisualState x:Name="Normal" />
+                        <VisualState x:Name="Selected">
+                            <VisualState.Setters>
+                                <Setter Property="BackgroundColor"
+                                        Value="Transparent" />
+                            </VisualState.Setters>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateGroupList>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
 
     <Grid RowDefinitions="0.24*,*">
         <!--#region Title -->
@@ -47,19 +67,20 @@
 
                 <!--#region List -->
                 <Grid Grid.Row="1" Margin="0,0,0,0">
-                    <CollectionView ItemsSource="{Binding Cards}" ItemSizingStrategy="MeasureAllItems">
+                    <CollectionView ItemsSource="{Binding Cards}" ItemSizingStrategy="MeasureAllItems"
+                                    SelectionChangedCommand="{Binding CardSelectedCommand}"
+                                    SelectionMode="Single"
+                                    SelectedItem="{Binding SelectedCard}"
+                                    SelectionChangedCommandParameter="{Binding SelectedCard}">
                         <CollectionView.ItemsLayout>
                             <LinearItemsLayout Orientation="Horizontal" SnapPointsType="Mandatory" SnapPointsAlignment="Center"/>
                         </CollectionView.ItemsLayout>
                         <CollectionView.ItemTemplate>
-                            <DataTemplate>
+                            <DataTemplate x:DataType="model:Card">
                                 <!--#region Cards -->
                                 <Grid Margin="10,0,0,0">
                                     <Border HeightRequest="220" WidthRequest="330" StrokeShape="RoundRectangle 20" Margin="0,0,10,0">
-                                        <Border.GestureRecognizers>
-                                            <TapGestureRecognizer Command="{Binding CardDetails}" CommandParameter="{Binding .}"/>
-                                        </Border.GestureRecognizers>
-                                        
+
                                         <Grid ColumnDefinitions="*,0.6*">
 
                                             <!--#region Card body -->
@@ -128,12 +149,13 @@
 
                     <Grid Row="1" Margin="10,-20,10,0">
                         <CollectionView ItemsSource="{Binding Budgets}" ItemsUpdatingScrollMode="KeepLastItemInView" 
-                                        ItemSizingStrategy="MeasureAllItems">
+                                        ItemSizingStrategy="MeasureAllItems" SelectionChangedCommand="{Binding ShowBudgetDetailsCommand}"
+                                        SelectionMode="Single">
                             <CollectionView.ItemsLayout>
                                 <LinearItemsLayout ItemSpacing="5" SnapPointsAlignment="Start" Orientation="Vertical"/>
                             </CollectionView.ItemsLayout>
                             <CollectionView.ItemTemplate>
-                                <DataTemplate>
+                                <DataTemplate x:DataType="model:Budget">
                                     <Border HeightRequest="80" 
                                             StrokeShape="RoundRectangle 10" BackgroundColor="#222222" 
                                             Stroke="#222222">

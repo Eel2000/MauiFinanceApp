@@ -34,7 +34,7 @@ public partial class MainPageViewModel : BaseViewModel
              "do you still want to start?", "Start anyway", "Cancel");
 
         if (dailog)
-            App.Current.MainPage.Navigation.PushModalAsync(new Login(_database));
+            await Application.Current.MainPage.Navigation.PushAsync(new Login(_database));
     }
 }
 

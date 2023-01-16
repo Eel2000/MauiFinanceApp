@@ -8,19 +8,19 @@
     Shell.NavBarIsVisible="False">
 
     <TabBar >
-        <Tab Icon="home.png">
+        <Tab Icon="home.png" Route="home">
             <ShellContent
                 Title="Dashboard"
                 ContentTemplate="{DataTemplate pages:Home}"
                 Route="MainPage" />
         </Tab>
-        <Tab Icon="wallet.png">
+        <Tab Icon="wallet.png" Route="wallet">
             <ShellContent
                 Title="Pockets"
                 ContentTemplate="{DataTemplate pages:Wallet}"
                 Route="MainPage" />
         </Tab>
-        <Tab Icon="trend.png" Route="Analytics">
+        <Tab Icon="trend.png" Route="analytics">
             <ShellContent
                 Title="Statistics"
                 ContentTemplate="{DataTemplate pages:Details}"

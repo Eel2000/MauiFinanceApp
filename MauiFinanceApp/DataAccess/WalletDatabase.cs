@@ -25,6 +25,7 @@ namespace MauiFinanceApp.DataAccess
 
             await Database.CreateTableAsync<User>();
             await Database.CreateTableAsync<Card>();
+            await Database.CreateTableAsync<Budget>();
             await Database.CreateTableAsync<Operation>();
         }
 
@@ -60,6 +61,12 @@ namespace MauiFinanceApp.DataAccess
         public async ValueTask RemoveCardAsync(int cardId)
             => await Database.DeleteAsync(cardId);
 
+        public async ValueTask UpdateCardAsync(Card card)
+            => await Database.InsertOrReplaceAsync(card);
+
+        public async ValueTask<Card> GetDefaultCardAsync()
+            => await Database.Table<Card>().FirstOrDefaultAsync(x => x.IsDefault);
+
         #endregion
 
         #region OperationOps
@@ -70,6 +77,13 @@ namespace MauiFinanceApp.DataAccess
             => await Database.Table<Operation>().Where(x => x.IsDeleted == false && x.CardId == card)
                 .OrderByDescending(x => x.OperationDate)
                 .ToListAsync();
+
+        /// <summary>
+        /// Get all ooperation without filtring them by any criteria.
+        /// </summary>
+        /// <returns><see cref="IEnumerable{T}"/> of <seealso cref="Operation"/>.</returns>
+        public async ValueTask<IEnumerable<Operation>> GetOperationsAsync()
+            => await Database.Table<Operation>().ToListAsync();
 
         public async ValueTask<Operation> RemoveOperationAsync(int operationId)
         {
@@ -94,6 +108,31 @@ namespace MauiFinanceApp.DataAccess
 
             return ops;
         }
+        #endregion
+
+        #region Budgets
+        public async ValueTask<IEnumerable<Budget>> GetBudgetsAsync()
+            => await Database.Table<Budget>().Where(x => x.IsActive).ToListAsync();
+
+        public async ValueTask<IEnumerable<Budget>> GetBudgetsByCardIdAsync(int cardId)
+            => await Database.Table<Budget>().Where(x => x.CardId == cardId && x.IsActive).ToListAsync();
+
+        public async ValueTask<int> RemoveBudgetAsync(int budgetId)
+        {
+            var raw = await Database.Table<Budget>().FirstOrDefaultAsync(x => x.Id == budgetId);
+            raw.IsActive = false;
+
+            var removed = await Database.InsertOrReplaceAsync(raw);
+
+            return removed;
+        }
+
+        public async ValueTask<int> UpdateBudgetAsync(Budget budget)
+            => await Database.InsertOrReplaceAsync(budget);
+
+        public async ValueTask<int> CreateBudgetAsync(Budget budget)
+            => await Database.InsertOrReplaceAsync(budget);
+
         #endregion
 
     }

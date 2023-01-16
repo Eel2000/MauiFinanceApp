@@ -52,7 +52,7 @@ public partial class AccountViewModel : BaseViewModel
                 {
                     Preferences.Clear();
                     App.Current.MainPage = new MainPage(_mainPageViewModel);
-                    await App.Current.MainPage.Navigation.PushModalAsync(new Login(_database));
+                    //await App.Current.MainPage.Navigation.PushModalAsync(new Login(_database));
                     return;
                 }
 
