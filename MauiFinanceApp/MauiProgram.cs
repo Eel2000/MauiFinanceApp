@@ -49,6 +49,7 @@ public static class MauiProgram
 
         #region ViewModelRegistration
 
+        builder.Services.AddTransient<HomeViewModel>();
         builder.Services.AddTransient<LoginViewModel>();
         builder.Services.AddTransient<WalletViewModel>();
         builder.Services.AddTransient<AccountViewModel>();

@@ -71,6 +71,13 @@ namespace MauiFinanceApp.DataAccess
                 .OrderByDescending(x => x.OperationDate)
                 .ToListAsync();
 
+        /// <summary>
+        /// Get all ooperation without filtring them by any criteria.
+        /// </summary>
+        /// <returns><see cref="IEnumerable{T}"/> of <seealso cref="Operation"/>.</returns>
+        public async ValueTask<IEnumerable<Operation>> GetOperationsAsync()
+            => await Database.Table<Operation>().ToListAsync();
+
         public async ValueTask<Operation> RemoveOperationAsync(int operationId)
         {
             var ops = await Database.Table<Operation>()
