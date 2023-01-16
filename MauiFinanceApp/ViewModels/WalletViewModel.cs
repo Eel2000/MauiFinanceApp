@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using Android.OS;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MauiFinanceApp.DataAccess;
@@ -24,7 +25,6 @@ public partial class WalletViewModel : BaseViewModel
     public WalletViewModel(WalletDatabase database)
     {
         _database = database;
-        InitDefaultData();
     }
 
     void InitDefaultData()
@@ -128,6 +128,21 @@ public partial class WalletViewModel : BaseViewModel
                 Name = "Founds"
             },
         };
+    }
+
+    async void InitializeWalletDataAsync()
+    {
+        try
+        {
+            var rawCards = await _database.GetCardsAsync();
+            Cards = new ObservableCollection<Card>(rawCards);
+
+            var rawBudgets = await _database.ge
+        }
+        catch (Exception e)
+        {
+            System.Diagnostics.Debug.WriteLine(e);
+        }
     }
 
     [RelayCommand]

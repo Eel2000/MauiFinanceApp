@@ -13,5 +13,6 @@ public class Budget
     public bool HasReachLimit { get; set; }
     public bool IsActive { get; set; }
     public decimal DedicatedAmount { get; set; }
+    public int CardId { get; set; }
 }
 
